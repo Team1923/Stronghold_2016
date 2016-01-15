@@ -24,18 +24,18 @@ public class OI {
 	public JoystickButton jLeft2;
 	public JoystickButton jLeft3;
 	
-	public JoystickButton start;
-	public JoystickButton a;
-	public JoystickButton b;
-	public JoystickButton x;
-	public JoystickButton y;
-	public JoystickButton lB;
-	public JoystickButton rB;
-	public JoystickButton lT;
-	public JoystickButton rT;
-	public JoystickButton back;
-	public JoystickButton leftClick;
-	public JoystickButton rightClick;
+//	public JoystickButton start;
+//	public JoystickButton a;
+//	public JoystickButton b;
+//	public JoystickButton x;
+//	public JoystickButton y;
+//	public JoystickButton lB;
+//	public JoystickButton rB;
+//	public JoystickButton lT;
+//	public JoystickButton rT;
+//	public JoystickButton back;
+//	public JoystickButton leftClick;
+//	public JoystickButton rightClick;
 	public XboxController xboxController;
 	
 	public OI() {
