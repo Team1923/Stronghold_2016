@@ -70,7 +70,6 @@ public class OI {
 		
 		jLeft2.whenPressed(new GearShiftCommand("down"));
 		jLeft2.whenPressed(new GearShiftCommand("up"));
-		
 	
 	}
 

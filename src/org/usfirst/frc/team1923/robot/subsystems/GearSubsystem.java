@@ -1,6 +1,6 @@
 package org.usfirst.frc.team1923.robot.subsystems;
 
-import org.usfirst.frc.team1923.robot.RobotMap;
+import org.usfirst.frc.team1923.robot.*;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -32,6 +32,12 @@ public class GearSubsystem extends Subsystem {
     public void shiftDown() {
     	RobotMap.gearSolenoidLeft.set(false);
     	RobotMap.gearSolenoidLeft.set(false);
+    }
+    
+    public boolean safeToShift(){
+    	double leftRate = RobotMap.leftEncoder.getRate();
+    	double rightRate = RobotMap.rightEncoder.getRate();
+    	return leftRate < 0 && rightRate < 0; //@TODO find threshold 
     }
     
 }

@@ -22,4 +22,8 @@ public class RobotMap {
 	public static CANTalon rightDriveOne = new CANTalon(0);  //@TODO find port
 	public static CANTalon rightDriveTwo = new CANTalon(0);  //@TODO find port
 	public static CANTalon rightDriveThree = new CANTalon(0);  //@TODO find port
+	
+	public static Encoder leftEncoder = new Encoder(0,0);
+	public static Encoder rightEncoder = new Encoder(0,0);
+
 }

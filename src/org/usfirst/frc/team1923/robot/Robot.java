@@ -33,7 +33,9 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = new OI();
+		oi = new OI(); 
+		RobotMap.leftEncoder.setDistancePerPulse(0); //@TODO find this value
+		RobotMap.rightEncoder.setDistancePerPulse(0); //@TODO find this value
     }
 	
 	/**
