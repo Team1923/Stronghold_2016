@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.*;
  */
 public class RobotMap {
     
+	public static final double EASE_INCREMENT = 0; //@TODO test ease increment
 	//Gear Shifters
 	public static Solenoid gearSolenoidLeft = new Solenoid(0); //@TODO find port
 	public static Solenoid gearSolenoidRight = new Solenoid(0); //@TODO find port

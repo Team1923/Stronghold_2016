@@ -16,10 +16,10 @@ public class DriveTrainSubsytem extends Subsystem{
 	}
 
 	public void stop(){
-		tankDrive(0, 0);
+		drive(0, 0);
 	}
 	
-	public void tankDrive(double left, double right){
+	public void drive(double left, double right){
 		RobotMap.leftDriveOne.set(left);
 		RobotMap.leftDriveTwo.set(left);
 		RobotMap.leftDriveThree.set(left);
@@ -29,8 +29,8 @@ public class DriveTrainSubsytem extends Subsystem{
 		RobotMap.rightDriveThree.set(right);
 	}
 
-	public void tankDrive(double s){
-		tankDrive(s, s);
+	public void drive(double s){
+		drive(s, s);
 	}
 
 	public void cubicDrive(double left, double right){
