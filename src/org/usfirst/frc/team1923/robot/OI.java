@@ -20,8 +20,8 @@ public class OI {
 	
 	public JoystickButton jRCenter;
 	
-	public JoystickButton jLeft4;
-	public JoystickButton jLeft2;
+	public JoystickButton jLeft4;	//upshift
+	public JoystickButton jLeft2;	//downshift
 	public JoystickButton jLeft3;
 	
 //	public JoystickButton start;
@@ -68,6 +68,8 @@ public class OI {
 		
 		//@TODO: Button mappings to the subsystems 
 		
+		jLeft2.whenPressed(new GearShiftCommand("down"));
+		jLeft2.whenPressed(new GearShiftCommand("up"));
 		
 	
 	}

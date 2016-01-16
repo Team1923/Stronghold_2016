@@ -26,8 +26,10 @@ public class GearShiftCommand extends Command {
 	protected void initialize() {
 		if(shiftUp)
 			Robot.gearSubsystem.shiftUp();
-		else
+		else{
+			//@TODO use encoders or something to make sure it doesn't downshift at too high a speed
 			Robot.gearSubsystem.shiftDown();
+		}
 	}
 
 	// Called repeatedly when this Command is scheduled to run
