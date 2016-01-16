@@ -37,7 +37,7 @@ public class GearSubsystem extends Subsystem {
     public boolean safeToShift(){
     	double leftRate = RobotMap.leftEncoder.getRate();
     	double rightRate = RobotMap.rightEncoder.getRate();
-    	return leftRate < 0 && rightRate < 0; //@TODO find threshold 
+    	return leftRate < 0 || rightRate < 0; //@TODO find threshold 
     }
     
 }
