@@ -10,6 +10,15 @@ import edu.wpi.first.wpilibj.*;
  */
 public class RobotMap {
     
+	//Gear Shifters
 	public static Solenoid gearSolenoidLeft = new Solenoid(0); //@TODO find port
 	public static Solenoid gearSolenoidRight = new Solenoid(0); //@TODO find port
+
+	//Drive Motors
+	public static CANTalon leftDriveOne = new CANTalon(0);  //@TODO find port
+	public static CANTalon leftDriveTwo = new CANTalon(0);  //@TODO find port
+	public static CANTalon leftDriveThree = new CANTalon(0);  //@TODO find port
+	public static CANTalon rightDriveOne = new CANTalon(0);  //@TODO find port
+	public static CANTalon rightDriveTwo = new CANTalon(0);  //@TODO find port
+	public static CANTalon rightDriveThree = new CANTalon(0);  //@TODO find port
 }
