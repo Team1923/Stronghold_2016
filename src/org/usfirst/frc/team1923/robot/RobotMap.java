@@ -25,5 +25,7 @@ public class RobotMap {
 	
 	public static Encoder leftEncoder = new Encoder(0,0);
 	public static Encoder rightEncoder = new Encoder(0,0);
+	
+	
 
 }

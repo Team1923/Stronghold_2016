@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class DriveTrainSubsytem extends Subsystem{
 	
-	final double SCALE_CONSTANT = 1.5;
+	final double SCALE_CONSTANT = 3;
 	public double oldLeftSpeed = 0,
 			oldRightSpeed = 0;
 
