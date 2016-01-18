@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.*;
  * floating around.
  * 
  * @modified Xavier 1/17/2016
+ * @modified by Aravind 1/17/2016
  */
 public class RobotMap {
     
@@ -27,13 +28,15 @@ public class RobotMap {
 	
 	public static Encoder leftEncoder = new Encoder(0,0);
 	public static Encoder rightEncoder = new Encoder(0,0);
-	public static Gyro gyro = new Gyro(0);
-	//public static Ultrasonic ultra = new Ultrasonic(1,1);//TODO find port
-	//public static AnalogAccelerometer accel = new AnalogAccelerometer(0);//TODO find port
+	
+	
+	//public static Gyro gyro = new Gyro(0);
+	//public static Ultrasonic ultra = new Ultrasonic(1,1);//@TODO find port
+	//public static AnalogAccelerometer accel = new AnalogAccelerometer(0);//@TODO find port
 	
 	//Robot initializing
 	public static void init(){
-		gyro.reset();
+		//gyro.reset();
 		leftEncoder.reset();
 		rightEncoder.reset();
 		//ultra.reset();
