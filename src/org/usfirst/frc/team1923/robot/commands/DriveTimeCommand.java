@@ -30,7 +30,7 @@ public class DriveTimeCommand extends Command {
 	}
 
 	protected boolean isFinished() {
-		return false;
+		return isTimedOut();
 	}
 
 	protected void end() {
