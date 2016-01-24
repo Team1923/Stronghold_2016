@@ -18,6 +18,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * documentation. If you change the name of this class or the package after
  * creating this project, you must also update the manifest file in the resource
  * directory.
+ * 
+ * @modified Xavier (1/23/2016)
  */
 public class Robot extends IterativeRobot {
 
@@ -25,8 +27,9 @@ public class Robot extends IterativeRobot {
 	public static DriveTrainSubsytem driveSubsystem = new DriveTrainSubsytem();
 	public static OI oi;
 
-    Command autonomousCommand;
-    SendableChooser chooser; //TODO make a chooser 
+    public Command autonomousCommand;
+    public Command teleopCommand;
+    public SendableChooser chooser; //TODO make a chooser 
 
     /**
      * This function is run when the robot is first started up and should be
@@ -36,6 +39,8 @@ public class Robot extends IterativeRobot {
 		oi = new OI(); 
 		RobotMap.leftEncoder.setDistancePerPulse(0); //@TODO find this value
 		RobotMap.rightEncoder.setDistancePerPulse(0); //@TODO find this value
+		
+		chooser = new SendableChooser();
     }
 	
 	/**
@@ -44,7 +49,10 @@ public class Robot extends IterativeRobot {
 	 * the robot is disabled.
      */
     public void disabledInit(){
-
+    	if (autonomousCommand != null)
+			autonomousCommand.cancel();
+		if (teleopCommand != null)
+			teleopCommand.cancel();
     }
 	
 	public void disabledPeriodic() {
