@@ -116,7 +116,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        driveSubsystem.drive(-oi.getleftStick().getY(), -oi.getrightStick().getY()); //TEMP SHIT
+//        driveSubsystem.drive(-oi.getleftStick().getY(), -oi.getrightStick().getY()); //TEMP SHIT
         log();
     }
     
