@@ -17,8 +17,8 @@ public class RobotMap {
 	public static final double EASE_INCREMENT = 0.09; //@TODO test ease increment
 	
 	//Gear Shifters
-//	public static Solenoid gearSolenoidLeft = new Solenoid(0); //@TODO find port
-//	public static Solenoid gearSolenoidRight = new Solenoid(0); //@TODO find port
+	public static Solenoid gearSolenoidLeft = new Solenoid(0); //@TODO find port
+	public static Solenoid gearSolenoidRight = new Solenoid(0); //@TODO find port
 
 	//Drive Motors
 	public static CANTalon leftDriveOne = new CANTalon(1);  //@TODO find port
@@ -31,8 +31,8 @@ public class RobotMap {
 	//Intake Motors
 	public static CANTalon intake = new CANTalon(0);
 	
-//	public static Encoder leftEncoder = new Encoder(0,0);
-//	public static Encoder rightEncoder = new Encoder(0,0);
+	public static Encoder leftEncoder = new Encoder(0,0);
+	public static Encoder rightEncoder = new Encoder(0,0);
 
 	
 	//public static Gyro gyro = new Gyro(0);
@@ -42,8 +42,8 @@ public class RobotMap {
 	//Robot initializing
 	public static void init(){
 		//gyro.reset();
-//		leftEncoder.reset();
-//		rightEncoder.reset();
+		leftEncoder.reset();
+		rightEncoder.reset();
 		//ultra.reset();
 		//accel.reset();
 	}

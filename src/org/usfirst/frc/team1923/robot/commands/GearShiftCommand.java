@@ -22,16 +22,14 @@ public class GearShiftCommand extends Command {
 		shiftUp = direction.equals("up");
 	}
 	
-	protected void initialize(){}
-
 //	// Called just before this Command runs the first time
-//	protected void initialize() {
-//		if(shiftUp)
-//			Robot.gearSubsystem.shiftUp();
-//		else if(Robot.gearSubsystem.safeToShift()){
-//			Robot.gearSubsystem.shiftDown();
-//		}
-//	}
+	protected void initialize() {
+		if(shiftUp)
+			Robot.gearSubsystem.shiftUp();
+		else if(Robot.gearSubsystem.safeToShift()){
+			Robot.gearSubsystem.shiftDown();
+		}
+	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {

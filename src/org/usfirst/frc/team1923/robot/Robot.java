@@ -37,8 +37,8 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI(); 
-//		RobotMap.leftEncoder.setDistancePerPulse(0); //@TODO find this value
-//		RobotMap.rightEncoder.setDistancePerPulse(0); //@TODO find this value
+		RobotMap.leftEncoder.setDistancePerPulse(0); //@TODO find this value
+		RobotMap.rightEncoder.setDistancePerPulse(0); //@TODO find this value
 		
 		chooser = new SendableChooser();
 		
