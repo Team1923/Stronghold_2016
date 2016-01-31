@@ -113,6 +113,11 @@ public class Robot extends IterativeRobot {
      * We gotta fix it and find out why it didnt work before
      * @TODO:
      * Fuck the person who made the drivetrain code
+     * 
+     * 
+     * JK everything's fixed
+     * 
+     * Although whoever wrote the calculator class deserves a week of drillbit sorting duty.
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
