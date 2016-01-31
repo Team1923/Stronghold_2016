@@ -22,7 +22,7 @@ public class DriveJoystickCommand extends Command{
 	protected void execute() {
 		 //@TODO implement cubicDrive()
 
-		Robot.driveSubsystem.smoothDrive(Robot.oi.leftStick.getY(), Robot.oi.rightStick.getY());
+		Robot.driveSubsystem.cubicDrive(Robot.oi.leftStick.getY(), Robot.oi.rightStick.getY());
 
 	}
 
