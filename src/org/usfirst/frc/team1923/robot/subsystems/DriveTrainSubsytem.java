@@ -53,7 +53,6 @@ public class DriveTrainSubsytem extends Subsystem{
 		right = oldRightSpeed;
 		
 		drive(left, right);
-
 	}
 
 

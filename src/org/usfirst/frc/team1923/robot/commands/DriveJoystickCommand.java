@@ -16,11 +16,17 @@ public class DriveJoystickCommand extends Command{
 		requires(Robot.driveSubsystem);
 	}
 	
-	protected void initialize() {		
+	protected void initialize() {	
+		System.out.println("drive with joysticks was init");
 	}
 
 	protected void execute() {
 		// @TODO implement cubicDrive()
+		System.out.println("Joystick values");
+		System.out.println("RIGHT: " + Robot.oi.rightStick.getY());
+		System.out.println("LEFT: " + Robot.oi.leftStick.getY());
+
+		
 		Robot.driveSubsystem.smoothDrive(Robot.oi.leftStick.getY(), Robot.oi.rightStick.getY());
 	}
 

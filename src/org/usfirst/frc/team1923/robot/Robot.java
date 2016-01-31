@@ -41,6 +41,9 @@ public class Robot extends IterativeRobot {
 //		RobotMap.rightEncoder.setDistancePerPulse(0); //@TODO find this value
 		
 		chooser = new SendableChooser();
+		
+		teleopCommand = new TeleopCommand();
+		
     }
 	
 	/**
@@ -104,8 +107,25 @@ public class Robot extends IterativeRobot {
     /**
      * This function is called periodically during operator control
      */
+    
+    /*
+     * This is some bullshit that's going here
+     * We gotta fix it and find out why it didnt work before
+     * @TODO:
+     * Fuck the person who made the drivetrain code
+     */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        driveSubsystem.drive(-oi.getleftStick().getY(), -oi.getrightStick().getY()); //TEMP SHIT
+        log();
+    }
+    
+    
+    public void log(){
+    	SmartDashboard.putNumber("left joy: ", oi.getleftStick().getY());
+    	SmartDashboard.putNumber("right joy: ", oi.getrightStick().getY());
+
+    	
     }
     
     /**
@@ -114,4 +134,5 @@ public class Robot extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+    
 }

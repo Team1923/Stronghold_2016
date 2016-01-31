@@ -42,9 +42,20 @@ public class OI {
 		
 		//@TODO: Button mappings to the subsystems 
 		
+		
+		
 		jLeft2.whenPressed(new GearShiftCommand("down"));
 		jLeft2.whenPressed(new GearShiftCommand("up"));
 	
 	}
+	
+	public Joystick getleftStick() {
+		return leftStick;
+	}
+
+	public Joystick getrightStick() {
+		return rightStick;
+	}
+
 
 }
