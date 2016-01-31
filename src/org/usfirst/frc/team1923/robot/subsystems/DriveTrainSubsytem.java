@@ -24,10 +24,10 @@ public class DriveTrainSubsytem extends Subsystem{
 	}
 
 	public void stop(){
-		drive(0, 0);
+		rawDrive(0, 0);
 	}
 	
-	public void drive(double left, double right){
+	public void rawDrive(double left, double right){
 		RobotMap.leftDriveOne.set(left);
 		RobotMap.leftDriveTwo.set(left);
 		RobotMap.leftDriveThree.set(left);
@@ -52,7 +52,7 @@ public class DriveTrainSubsytem extends Subsystem{
 		left = oldLeftSpeed;
 		right = oldRightSpeed;
 		
-		drive(left, right);
+		rawDrive(left, right);
 	}
 
 

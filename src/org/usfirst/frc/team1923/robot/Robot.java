@@ -108,21 +108,9 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     
-    /*
-     * This is some bullshit that's going here
-     * We gotta fix it and find out why it didnt work before
-     * @TODO:
-     * Fuck the person who made the drivetrain code
-     * 
-     * 
-     * JK everything's fixed
-     * 
-     * Although whoever wrote the calculator class deserves a week of drillbit sorting duty.
-     */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-//        driveSubsystem.drive(-oi.getleftStick().getY(), -oi.getrightStick().getY()); //TEMP SHIT
-        log();
+//        log();
     }
     
     
