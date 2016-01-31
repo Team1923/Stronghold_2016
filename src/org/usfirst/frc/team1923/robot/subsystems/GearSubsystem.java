@@ -18,27 +18,27 @@ public class GearSubsystem extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    /**
-     * Shifts the gear box into high gear
-     */
-    public void shiftUp() {
-    	RobotMap.gearSolenoidLeft.set(true); //@TODO get these values
-    	RobotMap.gearSolenoidLeft.set(true);
-    }
-    
-    /**
-     * Shifts the gear box into low gear
-     */
-    public void shiftDown() {
-    	RobotMap.gearSolenoidLeft.set(false);
-    	RobotMap.gearSolenoidLeft.set(false);
-    }
-    
-    public boolean safeToShift(){
-    	double leftRate = RobotMap.leftEncoder.getRate();
-    	double rightRate = RobotMap.rightEncoder.getRate();
-    	return leftRate < 0 || rightRate < 0; //@TODO find threshold 
-    }
+//    /**
+//     * Shifts the gear box into high gear
+//     */
+//    public void shiftUp() {
+//    	RobotMap.gearSolenoidLeft.set(true); //@TODO get these values
+//    	RobotMap.gearSolenoidLeft.set(true);
+//    }
+//    
+//    /**
+//     * Shifts the gear box into low gear
+//     */
+//    public void shiftDown() {
+//    	RobotMap.gearSolenoidLeft.set(false);
+//    	RobotMap.gearSolenoidLeft.set(false);
+//    }
+//    
+//    public boolean safeToShift(){
+//    	double leftRate = RobotMap.leftEncoder.getRate();
+//    	double rightRate = RobotMap.rightEncoder.getRate();
+//    	return leftRate < 0 || rightRate < 0; //@TODO find threshold 
+//    }
     
 }
 

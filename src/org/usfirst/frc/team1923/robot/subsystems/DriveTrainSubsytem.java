@@ -41,7 +41,7 @@ public class DriveTrainSubsytem extends Subsystem{
 		left = Math.pow(left, SCALE_CONSTANT);
 		right = Math.pow(right, SCALE_CONSTANT);
 		
-		drive(left, right);
+		smoothDrive(left, right);
 	}
 	
 	public void smoothDrive(double left, double right){
