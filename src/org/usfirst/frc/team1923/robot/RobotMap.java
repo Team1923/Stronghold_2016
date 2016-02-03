@@ -15,10 +15,6 @@ import edu.wpi.first.wpilibj.*;
 public class RobotMap {
     
 	public static final double EASE_INCREMENT = 0.09; //@TODO test ease increment
-	
-	//Gear Shifters
-	public static Solenoid gearSolenoidLeft = new Solenoid(0); //@TODO find port
-	public static Solenoid gearSolenoidRight = new Solenoid(0); //@TODO find port
 
 	//Drive Motors
 	public static CANTalon leftDriveOne = new CANTalon(1);  //@TODO find port
@@ -28,24 +24,9 @@ public class RobotMap {
 	public static CANTalon rightDriveTwo = new CANTalon(5);  //@TODO find port
 	public static CANTalon rightDriveThree = new CANTalon(6);  //@TODO find port
 	
-	//Intake Motors
-	public static CANTalon intake = new CANTalon(0);
-	
-	public static Encoder leftEncoder = new Encoder(0,0);
-	public static Encoder rightEncoder = new Encoder(0,0);
-
-	
-	//public static Gyro gyro = new Gyro(0);
-	//public static Ultrasonic ultra = new Ultrasonic(1,1);//@TODO find port
-	//public static AnalogAccelerometer accel = new AnalogAccelerometer(0);//@TODO find port
-	
 	//Robot initializing
 	public static void init(){
-		//gyro.reset();
-		leftEncoder.reset();
-		rightEncoder.reset();
-		//ultra.reset();
-		//accel.reset();
+		
 	}
 
 }
