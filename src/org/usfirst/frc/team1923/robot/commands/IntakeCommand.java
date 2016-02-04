@@ -1,7 +1,6 @@
 package org.usfirst.frc.team1923.robot.commands;
 
 import org.usfirst.frc.team1923.robot.Robot;
-import org.usfirst.frc.team1923.robot.RobotMap;
 import org.usfirst.frc.team1923.robot.subsystems.IntakeSubsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -35,14 +34,14 @@ public class IntakeCommand extends Command {
     protected boolean isFinished() {
         return false;
     }
-
+    
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.intakeSubsystem.neutral();
     }
-
+    
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	Robot.intakeSubsystem.neutral();
     }
 }
