@@ -18,7 +18,7 @@ public class RobotMap {
 	public static final double EASE_INCREMENT = 0.09; //TODO test ease increment
 	
 	//Gear Shifters
-	//public static Solenoid gearShifter = new Solenoid(0); //TODO find port
+	public static DoubleSolenoid gearShifter = new DoubleSolenoid(0,1);
 	
 
 	//Drive Motors

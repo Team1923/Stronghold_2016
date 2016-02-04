@@ -23,7 +23,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 
-	//public static GearSubsystem gearSubsystem = new GearSubsystem();
+	public static GearSubsystem gearSubsystem = new GearSubsystem();
 	public static DriveTrainSubsytem driveSubsystem = new DriveTrainSubsytem();
 	public static IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
 	
@@ -124,8 +124,7 @@ public class Robot extends IterativeRobot {
     	
     	//SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());
     	
-    	SmartDashboard.putBoolean("intake", intakeSubsystem.isIntake());
-    	SmartDashboard.putBoolean("outake", intakeSubsystem.isOutake());
+    	SmartDashboard.putString("Intake Status: ", intakeSubsystem.getIntakeState());
     }
     
     /**

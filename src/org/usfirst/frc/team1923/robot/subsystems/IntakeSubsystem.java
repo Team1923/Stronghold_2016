@@ -12,7 +12,7 @@ public class IntakeSubsystem extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
-	String intakeState = "Neutral";
+	private String intakeState = "Neutral";
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -33,15 +33,8 @@ public class IntakeSubsystem extends Subsystem {
     	intakeState="Neutral";
     }
     
-    public boolean isIntake(){
-    	return intakeState.equalsIgnoreCase("In");
-    }
-    
-    public boolean isOutake(){
-    	return intakeState.equalsIgnoreCase("Out");
-    }
-    public boolean isNeutral(){
-    	return intakeState.equalsIgnoreCase("Neutral");
+    public String getIntakeState(){
+    	return intakeState;
     }
 }
 

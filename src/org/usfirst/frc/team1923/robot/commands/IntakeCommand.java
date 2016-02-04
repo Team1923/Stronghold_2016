@@ -15,7 +15,7 @@ public class IntakeCommand extends Command {
     public IntakeCommand(String dir) {
         // Use requires() here to declare subsystem dependencies
         requires(new IntakeSubsystem());
-        direction = dir.equalsIgnoreCase("in");
+        direction = dir.equals("in");
     }
 
     // Called just before this Command runs the first time
@@ -37,6 +37,7 @@ public class IntakeCommand extends Command {
     
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.intakeSubsystem.neutral();
     }
     
     // Called when another command which requires one or more of the same
