@@ -23,8 +23,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 
-	public static GearSubsystem gearSubsystem = new GearSubsystem();
+	//public static GearSubsystem gearSubsystem = new GearSubsystem();
 	public static DriveTrainSubsytem driveSubsystem = new DriveTrainSubsytem();
+	public static IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
+	
 	public static OI oi;
 
     public Command autonomousCommand;
@@ -37,8 +39,10 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI(); 
-		RobotMap.leftEncoder.setDistancePerPulse(0); //@TODO find this value
-		RobotMap.rightEncoder.setDistancePerPulse(0); //@TODO find this value
+//		RobotMap.leftEncoder.setDistancePerPulse(0); //TODO find this value
+//		RobotMap.rightEncoder.setDistancePerPulse(0); //TODO find this value
+		
+		//gearSubsystem.shiftDown(); //forces start in low gear
 		
 		chooser = new SendableChooser();
 		
@@ -115,8 +119,13 @@ public class Robot extends IterativeRobot {
     
     
     public void log(){
-    	SmartDashboard.putNumber("left joy: ", oi.getleftStick().getY());
-    	SmartDashboard.putNumber("right joy: ", oi.getrightStick().getY());
+    	SmartDashboard.putNumber("left joy: ", oi.leftStick.getY());
+    	SmartDashboard.putNumber("right joy: ", oi.rightStick.getY());
+    	
+    	//SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());
+    	
+    	SmartDashboard.putBoolean("intake", intakeSubsystem.isIntake());
+    	SmartDashboard.putBoolean("outake", intakeSubsystem.isOutake());
     }
     
     /**

@@ -18,17 +18,19 @@ public class GearShiftCommand extends Command {
 	 * @param direction The direction in which to shift, either up or down
 	 */
 	public GearShiftCommand(String direction) {
-		requires(Robot.gearSubsystem);
-		shiftUp = direction.equals("up");
+//		requires(Robot.gearSubsystem);
+//		shiftUp = direction.equals("up");
 	}
 	
-//	// Called just before this Command runs the first time
+	// Called just before this Command runs the first time
 	protected void initialize() {
-		if(shiftUp)
-			Robot.gearSubsystem.shiftUp();
-		else if(Robot.gearSubsystem.safeToShift()){
-			Robot.gearSubsystem.shiftDown();
-		}
+//		if(shiftUp)
+//			Robot.gearSubsystem.shiftUp();
+//		else
+//			Robot.gearSubsystem.shiftDown();	
+////		else if(Robot.gearSubsystem.safeToShift())
+////			Robot.gearSubsystem.shiftDown();
+		
 	}
 
 	// Called repeatedly when this Command is scheduled to run
