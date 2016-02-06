@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.*;
 public class RobotMap {
     
 	public static final double EASE_INCREMENT = 0.09; //TODO test ease increment
-	
+	public static final double FEED_BACK_CONTROL_CONSTANT = 0.5;
 	//Gear Shifters
 	public static DoubleSolenoid gearShifter = new DoubleSolenoid(0,1);
 	
@@ -28,17 +28,21 @@ public class RobotMap {
 	public static CANTalon rightDriveOne = new CANTalon(4);  
 	public static CANTalon rightDriveTwo = new CANTalon(5);  
 	public static CANTalon rightDriveThree = new CANTalon(6);  
+	public static CANTalon shooterWheel = new CANTalon(7);
 	
 	//Intake Motor
 	public static CANTalon intake = new CANTalon(0);
 	
 //	public static Encoder leftEncoder = new Encoder(0,0); //TODO: find encoder ports
 //	public static Encoder rightEncoder = new Encoder(0,0);
+//														first wire, second wire, invert direction?, mode
+	public static Encoder shooterEncoder = new Encoder(0, 1, false, Encoder.EncodingType.k2X);
 	
 	//Robot initializing
 	public static void init(){
 //		leftEncoder.reset();
 //		rightEncoder.reset();
+    	RobotMap.shooterEncoder.reset();
 	}
 
 }
