@@ -32,7 +32,7 @@ public class ShooterSubsystem extends Subsystem {
 	 */
 	public void startUp(double targetRate) {
 		this.targetRate = targetRate;
-		RobotMap.shooterWheel.set(1);
+		update();
 	}
 
 	/**

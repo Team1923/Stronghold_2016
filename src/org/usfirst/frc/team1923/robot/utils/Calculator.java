@@ -24,7 +24,7 @@ public class Calculator {
 	
 	public static double getShooterFeedbackControl(double current, double target, double constant)
 	{
-		return (constant*(target-current));
+		return (constant*(target-current)/target);
 	}
 	
 	public static double ease(double current, double old){
