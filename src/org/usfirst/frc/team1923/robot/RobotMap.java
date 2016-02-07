@@ -20,7 +20,7 @@ public class RobotMap {
 	public static final double FEED_BACK_CONTROL_CONSTANT = 0.5;
 	public static final double DISTANCE_PER_PULSE = 1 / 256.0;
 	// Gear Shifters
-	public static DoubleSolenoid gearShifter = new DoubleSolenoid(0, 1);
+//	public static DoubleSolenoid gearShifter = new DoubleSolenoid(0, 1);
 
 	// Drive Motors
 	public static CANTalon leftDriveOne = new CANTalon(1);
@@ -40,13 +40,13 @@ public class RobotMap {
 
 	// public static Encoder rightEncoder = new Encoder(0,0);
 	// first wire, second wire, invert direction?, mode
-	public static Encoder shooterEncoder = new Encoder(0, 1, false, Encoder.EncodingType.k2X);
+//	public static Encoder shooterEncoder = new Encoder(0, 1, false, Encoder.EncodingType.k2X);
 
 	// Robot initializing
 	public static void init() {
 		// leftEncoder.reset();
 		// rightEncoder.reset();
-		RobotMap.shooterEncoder.reset();
-		RobotMap.shooterEncoder.setDistancePerPulse(DISTANCE_PER_PULSE);
+//		RobotMap.shooterEncoder.reset();
+//		RobotMap.shooterEncoder.setDistancePerPulse(DISTANCE_PER_PULSE);
 	}
 }

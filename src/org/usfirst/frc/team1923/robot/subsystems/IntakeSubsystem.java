@@ -19,12 +19,12 @@ public class IntakeSubsystem extends Subsystem {
     }
     
     public void intake(){
-    	RobotMap.intake.set(1); //TODO Test for direction and speed
+    	RobotMap.intake.set(.5); //TODO Test for direction and speed
     	intakeState="In";
     }
     
     public void outake(){
-    	RobotMap.intake.set(-1); //TODO Test for direction and speed
+    	RobotMap.intake.set(.5); //TODO Test for direction and speed
     	intakeState="Out";
     }
     

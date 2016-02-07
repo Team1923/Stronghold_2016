@@ -45,7 +45,7 @@ public class OI {
 		xboxController.a.whileHeld(new IntakeCommand("out"));
 		xboxController.y.whileHeld(new IntakeCommand("in"));
 
-		xboxController.lb.whileHeld(new ShooterSpinCommand(3600));
+//		xboxController.lb.whileHeld(new ShooterSpinCommand(3600));
 		
 		//jLeft2.whenPressed(new GearShiftCommand("down"));
 		//jLeft2.whenPressed(new GearShiftCommand("up"));
