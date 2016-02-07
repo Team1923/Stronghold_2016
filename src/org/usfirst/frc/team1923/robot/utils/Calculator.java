@@ -18,12 +18,21 @@ public class Calculator {
 		} else {
 			newVal = current;
 		}
-	
 		return newVal;
+	}
+	
+	
+	public static double getShooterFeedbackControl(double current, double target, double constant)
+	{
+		return (constant*(target-current)/target);
 	}
 	
 	public static double ease(double current, double old){
 		return ease(current, old, RobotMap.EASE_INCREMENT);
+	}
+	
+	public static double getShooterFeedbackControl(double current, double target) {
+		return getShooterFeedbackControl(current, target, RobotMap.FEED_BACK_CONTROL_CONSTANT);
 	}
 	
 }

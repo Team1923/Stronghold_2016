@@ -1,9 +1,7 @@
 package org.usfirst.frc.team1923.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-//import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.buttons.Trigger;
 
 import org.usfirst.frc.team1923.robot.commands.*;
 import org.usfirst.frc.team1923.robot.utils.*;
@@ -32,15 +30,18 @@ public class OI {
 		
 		xboxController = new XboxController(3);
 		//example binding: xboxController.a.whenPressed(...)
-				
+		
 		//Joystick buttons
 		jRCenter = new JoystickButton(rightStick, 3);
 		
 		jLeft4 = new JoystickButton(leftStick, 4);
 		jLeft2 = new JoystickButton(leftStick, 2);
 		jLeft3 = new JoystickButton(leftStick, 3);
+
+		//TODO: Button mappings to the subsystems
 		
-		//@TODO: Button mappings to the subsystems 
+		xboxController.a.whileHeld(new IntakeCommand("out"));
+		xboxController.y.whileHeld(new IntakeCommand("in"));
 	
 	}
 }

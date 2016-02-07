@@ -11,22 +11,31 @@ import edu.wpi.first.wpilibj.*;
  * @modified Xavier 1/17/2016
  * @modified by Aravind 1/17/2016
  * @modified by Aravind 1/31/2016
+ * @modified by Aravind 2/3/2016
  */
 public class RobotMap {
-    
-	public static final double EASE_INCREMENT = 0.09; //@TODO test ease increment
 
-	//Drive Motors
-	public static CANTalon leftDriveOne = new CANTalon(1);  //@TODO find port
-	public static CANTalon leftDriveTwo = new CANTalon(2);  //@TODO find port
-	public static CANTalon leftDriveThree = new CANTalon(3);  //@TODO find port
-	public static CANTalon rightDriveOne = new CANTalon(4);  //@TODO find port
-	public static CANTalon rightDriveTwo = new CANTalon(5);  //@TODO find port
-	public static CANTalon rightDriveThree = new CANTalon(6);  //@TODO find port
-	
-	//Robot initializing
-	public static void init(){
-		
+
+	public static final double EASE_INCREMENT = 0.09; // TODO test ease
+														// increment
+	public static final double FEED_BACK_CONTROL_CONSTANT = 0.5;
+	public static final double DISTANCE_PER_PULSE = 1 / 256.0;
+
+	// Drive Motors
+	public static CANTalon leftDriveOne = new CANTalon(1);
+	public static CANTalon leftDriveTwo = new CANTalon(2);
+	public static CANTalon leftDriveThree = new CANTalon(3);
+	public static CANTalon rightDriveOne = new CANTalon(4);
+	public static CANTalon rightDriveTwo = new CANTalon(5);
+	public static CANTalon rightDriveThree = new CANTalon(6);
+
+	public static CANTalon shooterWheel = new CANTalon(7);
+
+	// Intake Motor
+	public static CANTalon intake = new CANTalon(0);
+
+	// Robot initializing
+	public static void init() {
+
 	}
-
 }
