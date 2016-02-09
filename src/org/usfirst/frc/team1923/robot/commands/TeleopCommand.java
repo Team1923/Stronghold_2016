@@ -8,6 +8,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class TeleopCommand extends CommandGroup {
     
     public  TeleopCommand() {
-    	addSequential(new DriveJoystickCommand());
+    	addParallel(new DriveJoystickCommand());
     }
 }

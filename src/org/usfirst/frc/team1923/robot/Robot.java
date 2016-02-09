@@ -24,6 +24,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static DriveTrainSubsytem driveSubsystem = new DriveTrainSubsytem();
+	public static IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
+//	public static ShooterSubsystem shooterSubsystem = new ShooterSubsystem();
+	
 	public static OI oi;
 
     public Command autonomousCommand;
@@ -36,7 +39,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI(); 
-		
+				
 		chooser = new SendableChooser();
 		teleopCommand = new TeleopCommand();
 		
@@ -113,6 +116,8 @@ public class Robot extends IterativeRobot {
     public void log(){
     	SmartDashboard.putNumber("left joy: ", oi.leftStick.getY());
     	SmartDashboard.putNumber("right joy: ", oi.rightStick.getY());
+
+    	SmartDashboard.putString("Intake Status: ", intakeSubsystem.getIntakeState());
     }
     
     /**

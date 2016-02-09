@@ -9,9 +9,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  * Subsystem handles drive CANTalons.
- * @author Saikiran Nakka
- * @modified: Aravind (1/21/2016)
- *
  */
 public class DriveTrainSubsytem extends Subsystem{
 	
@@ -38,7 +35,7 @@ public class DriveTrainSubsytem extends Subsystem{
 		RobotMap.rightDriveThree.set(right);
 	}
 
-	public void cubicDrive(double left, double right){
+	public void scalarDrive(double left, double right){
 		left = Math.pow(left, SCALE_CONSTANT);
 		right = Math.pow(right, SCALE_CONSTANT);
 		
@@ -54,6 +51,16 @@ public class DriveTrainSubsytem extends Subsystem{
 		right = oldRightSpeed;
 		
 		rawDrive(left, right);
+	}
+	
+	//returns true if any of the motors are moving
+	public boolean isDriving(){
+		return (RobotMap.leftDriveOne.get() != 0 ||
+				RobotMap.leftDriveTwo.get() != 0 ||
+				RobotMap.leftDriveThree.get() != 0 ||
+				RobotMap.rightDriveOne.get() != 0 ||
+				RobotMap.rightDriveTwo.get() != 0 ||
+				RobotMap.rightDriveThree.get() != 0);
 	}
 
 

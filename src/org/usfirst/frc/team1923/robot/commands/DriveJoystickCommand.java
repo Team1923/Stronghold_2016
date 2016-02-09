@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 /**
  * This command takes joystick input and runs tankDrive.
- * @author Saikiran Nakka
  *
  */
 public class DriveJoystickCommand extends Command{
@@ -20,9 +19,7 @@ public class DriveJoystickCommand extends Command{
 	}
 
 	protected void execute() {
-		 //@TODO implement cubicDrive()
-
-		Robot.driveSubsystem.cubicDrive(-Robot.oi.leftStick.getY(), Robot.oi.rightStick.getY());
+		Robot.driveSubsystem.scalarDrive(Robot.oi.leftStick.getY(), Robot.oi.rightStick.getY());
 
 	}
 
