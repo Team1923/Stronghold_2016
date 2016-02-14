@@ -22,10 +22,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * @modified Xavier (1/23/2016)
  */
 public class Robot extends IterativeRobot {
-
+	
+	public static GearSubsystem gearSubsystem = new GearSubsystem();
 	public static DriveTrainSubsytem driveSubsystem = new DriveTrainSubsytem();
 	public static IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
-//	public static ShooterSubsystem shooterSubsystem = new ShooterSubsystem();
 	
 	public static OI oi;
 
@@ -43,6 +43,8 @@ public class Robot extends IterativeRobot {
 		chooser = new SendableChooser();
 		teleopCommand = new TeleopCommand();
 		
+		gearSubsystem.shiftDown(); //forces start in low gear
+		RobotMap.mainCompressor.setClosedLoopControl(true);		
     }
 	
 	/**
@@ -118,6 +120,8 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putNumber("right joy: ", oi.rightStick.getY());
 
     	SmartDashboard.putString("Intake Status: ", intakeSubsystem.getIntakeState());
+    	
+    	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());
     }
     
     /**
