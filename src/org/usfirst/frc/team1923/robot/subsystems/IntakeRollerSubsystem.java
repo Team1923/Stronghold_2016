@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *Subsystem to handle intake talons
  */
-public class IntakeSubsystem extends Subsystem {
+public class IntakeRollerSubsystem extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.

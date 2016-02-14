@@ -1,6 +1,5 @@
 package org.usfirst.frc.team1923.robot.subsystems;
 
-import org.usfirst.frc.team1923.robot.Robot;
 import org.usfirst.frc.team1923.robot.RobotMap;
 import org.usfirst.frc.team1923.robot.commands.DriveJoystickCommand;
 import org.usfirst.frc.team1923.robot.utils.Calculator;

@@ -32,8 +32,9 @@ public class OI {
 
 		//TODO: Button mappings to the subsystems
 		
-		xboxController.a.whileHeld(new IntakeCommand("out"));
-		xboxController.y.whileHeld(new IntakeCommand("in"));
+		xboxController.a.whileHeld(new IntakeRollerCommand("out"));
+		xboxController.y.whileHeld(new IntakeRollerCommand("in"));
+		xboxController.x.whileHeld(new IntakePistonCommand());
 		
 		shifter.whenPressed(new GearShiftCommand());
 	

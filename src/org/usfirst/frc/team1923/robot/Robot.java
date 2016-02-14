@@ -25,7 +25,8 @@ public class Robot extends IterativeRobot {
 	
 	public static GearSubsystem gearSubsystem = new GearSubsystem();
 	public static DriveTrainSubsytem driveSubsystem = new DriveTrainSubsytem();
-	public static IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
+	public static IntakeRollerSubsystem intakeRollerSubsystem = new IntakeRollerSubsystem();
+	public static IntakePistonSubsystem intakePistonSubsystem = new IntakePistonSubsystem();
 	
 	public static OI oi;
 
@@ -44,6 +45,7 @@ public class Robot extends IterativeRobot {
 		teleopCommand = new TeleopCommand();
 		
 		gearSubsystem.shiftDown(); //forces start in low gear
+		intakePistonSubsystem.intakeUp(); //force intake to go up
 		RobotMap.mainCompressor.setClosedLoopControl(true);		
     }
 	
@@ -118,8 +120,9 @@ public class Robot extends IterativeRobot {
     public void log(){
     	SmartDashboard.putNumber("left joy: ", oi.leftStick.getY());
     	SmartDashboard.putNumber("right joy: ", oi.rightStick.getY());
-
-    	SmartDashboard.putString("Intake Status: ", intakeSubsystem.getIntakeState());
+    	
+    	SmartDashboard.putString("Intake Roller Status: ", intakeRollerSubsystem.getIntakeState());
+    	SmartDashboard.putBoolean("Intake Down?: ", intakePistonSubsystem.intakePosition());
     	
     	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());
     }
