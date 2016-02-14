@@ -30,13 +30,13 @@ public class RobotMap {
 	public static CANTalon rightDriveThree = new CANTalon(9);
 
 	// Intake Motor
-	public static CANTalon intake = new CANTalon(3);
+	public static CANTalon intake = new CANTalon(2);
 	
 	
 	//Pneumatics 
 	public static Compressor mainCompressor = new Compressor(10);
-	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10, 4,7);
-	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10, 5,6);
+	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,5,6);
+	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,4,7);
 	
 	
 	// Robot initializing

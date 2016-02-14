@@ -28,12 +28,12 @@ public class IntakePistonSubsystem extends Subsystem {
     }
     
     public void intakeDown(){
-    	RobotMap.intakeSolenoid.set(DoubleSolenoid.Value.kForward);
+    	RobotMap.intakeSolenoid.set(DoubleSolenoid.Value.kReverse);
     	isDown = true;
     }
     
     public void intakeUp(){
-    	RobotMap.intakeSolenoid.set(DoubleSolenoid.Value.kReverse);
+    	RobotMap.intakeSolenoid.set(DoubleSolenoid.Value.kForward);
     	isDown = false;
     }
     

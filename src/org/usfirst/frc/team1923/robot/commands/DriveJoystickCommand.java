@@ -19,7 +19,7 @@ public class DriveJoystickCommand extends Command{
 	}
 
 	protected void execute() {
-		Robot.driveSubsystem.scalarDrive(Robot.oi.leftStick.getY(), Robot.oi.rightStick.getY());
+		Robot.driveSubsystem.scalarDrive(-Robot.oi.leftStick.getY(), Robot.oi.rightStick.getY());
 
 	}
 

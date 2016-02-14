@@ -34,7 +34,7 @@ public class OI {
 		
 		xboxController.a.whileHeld(new IntakeRollerCommand("out"));
 		xboxController.y.whileHeld(new IntakeRollerCommand("in"));
-		xboxController.x.whileHeld(new IntakePistonCommand());
+		xboxController.x.whenReleased(new IntakePistonCommand());
 		
 		shifter.whenPressed(new GearShiftCommand());
 	
