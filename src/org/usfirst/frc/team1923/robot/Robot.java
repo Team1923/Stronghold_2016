@@ -27,6 +27,7 @@ public class Robot extends IterativeRobot {
 	public static DriveTrainSubsytem driveSubsystem = new DriveTrainSubsytem();
 	public static IntakeRollerSubsystem intakeRollerSubsystem = new IntakeRollerSubsystem();
 	public static IntakePistonSubsystem intakePistonSubsystem = new IntakePistonSubsystem();
+	public static ShooterWheelSubsystem shooterWheelSubsystem = new ShooterWheelSubsystem();
 	
 	public static OI oi;
 
@@ -46,7 +47,8 @@ public class Robot extends IterativeRobot {
 		
 		gearSubsystem.shiftDown(); //forces start in low gear
 		intakePistonSubsystem.intakeUp(); //force intake to go up
-		RobotMap.mainCompressor.setClosedLoopControl(true);		
+		shooterWheelSubsystem.stop(); //forces shooter to stop
+		RobotMap.mainCompressor.setClosedLoopControl(true); //forces compressor loop		
     }
 	
 	/**
@@ -125,6 +127,8 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putBoolean("Intake Down?: ", intakePistonSubsystem.intakePosition());
     	
     	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());
+    	
+    	SmartDashboard.putBoolean("Is spinning? ", shooterWheelSubsystem.getStatus());
     }
     
     /**

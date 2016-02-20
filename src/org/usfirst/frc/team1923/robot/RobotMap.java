@@ -32,6 +32,9 @@ public class RobotMap {
 	// Intake Motor
 	public static CANTalon intake = new CANTalon(2);
 	
+	//Shooter Motor
+	public static CANTalon shooter = new CANTalon(1);
+	
 	
 	//Pneumatics 
 	public static Compressor mainCompressor = new Compressor(10);
