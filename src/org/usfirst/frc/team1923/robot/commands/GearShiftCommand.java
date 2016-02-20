@@ -10,18 +10,26 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class GearShiftCommand extends Command {
 	
+	private boolean shiftUp;
 
 	/**
 	 * Shifts the robot's gearbox up or down
 	 * @param direction The direction in which to shift, either up or down
 	 */
-	public GearShiftCommand() {
+	public GearShiftCommand(boolean up) {
+		shiftUp = up;
 		requires(Robot.gearSubsystem);
 	}
 	
 	// Called just before this Command runs the first time
 	protected void initialize() {
-		Robot.gearSubsystem.shift();
+		if(shiftUp){
+			Robot.gearSubsystem.shiftUp();
+		} else{
+			Robot.gearSubsystem.shiftDown();
+		}
+		
+		//Robot.gearSubsystem.shift();
 		
 		
 	}

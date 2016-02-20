@@ -35,8 +35,11 @@ public class DriveTrainSubsytem extends Subsystem{
 	}
 
 	public void scalarDrive(double left, double right){
-		left = Math.pow(left, SCALE_CONSTANT);
-		right = Math.pow(right, SCALE_CONSTANT);
+//		left = Math.pow(left, SCALE_CONSTANT);
+//		right = Math.pow(right, SCALE_CONSTANT);
+		
+		left = Math.sin(left);
+		right = Math.sin(right);
 		
 		smoothDrive(left, right);
 	}

@@ -16,15 +16,7 @@ public class GearSubsystem extends Subsystem {
     public void initDefaultCommand() {
 
     }
-    
-    public void shift(){ //acts as a toggle command
-    	if(isShiftedDown){
-    		shiftUp();
-    	} else{
-    		shiftDown();
-    	}
-    }
-    
+        
     /**
      * Shifts the gear box into high gear
      */
@@ -45,9 +37,6 @@ public class GearSubsystem extends Subsystem {
     	}
     }
     
-    /*
-     * TODO: .8 is a temp value, need to test and find a proper value
-     */
     public boolean safeToShift(){
     	return true;
     }
