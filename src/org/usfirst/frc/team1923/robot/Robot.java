@@ -46,8 +46,9 @@ public class Robot extends IterativeRobot {
 		
 		gearSubsystem.shiftDown(); //forces start in low gear
 		intakePistonSubsystem.intakeUp(); //force intake to go up
-		RobotMap.mainCompressor.setClosedLoopControl(true);		
+		RobotMap.mainCompressor.setClosedLoopControl(true);	
     }
+
 	
 	/**
      * This function is called once each time the robot enters Disabled mode.
@@ -125,6 +126,7 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putBoolean("Intake Down?: ", intakePistonSubsystem.intakePosition());
     	
     	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());
+    	
     }
     
     /**
