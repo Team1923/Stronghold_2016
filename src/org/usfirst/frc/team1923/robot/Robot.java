@@ -125,6 +125,9 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putBoolean("Intake Down?: ", intakePistonSubsystem.intakePosition());
     	
     	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());
+    	
+    	SmartDashboard.putNumber("Left Drive", RobotMap.leftDriveEncoder.get());
+    	SmartDashboard.putNumber("Right Drive", RobotMap.rightDriveEncoder.get());
     }
     
     /**
