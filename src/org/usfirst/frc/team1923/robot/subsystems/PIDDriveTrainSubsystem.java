@@ -22,6 +22,7 @@ public class PIDDriveTrainSubsystem extends PIDSubsystem {
 	ENC_DIST_TOLERANCE = 1.0, //Tolerance in distance units
 	WHEEL_CIRCUMFERENCE = 6*Math.PI,		//**** DISTANCE UNIT IN INCHES ****
 	DEFAULT_TIMEOUT = 3.0; //Default of 3 seconds
+	
     public PIDDriveTrainSubsystem() {
     	super(Pe, Ie, De);
     	RobotMap.leftDriveEncoder.setDistancePerPulse(WHEEL_CIRCUMFERENCE/256.0);
@@ -130,5 +131,13 @@ public class PIDDriveTrainSubsystem extends PIDSubsystem {
     	if(!manual) {
     		smoothDrive(output, output);
     	}
+    }
+    
+    public double getLeftEncoderRate(){
+    	return RobotMap.leftDriveEncoder.getRate();
+    }
+    
+    public double getRightEncoderRate(){
+    	return RobotMap.rightDriveEncoder.getRate();
     }
 }
