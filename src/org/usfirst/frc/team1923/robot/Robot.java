@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team1923.robot;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -19,7 +20,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  * 
- * @modified Xavier (1/23/2016)
  */
 public class Robot extends IterativeRobot {
 	
@@ -33,6 +33,7 @@ public class Robot extends IterativeRobot {
     public Command autonomousCommand;
     public Command teleopCommand;
     public SendableChooser chooser; //TODO make a chooser 
+    public CameraServer server;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -46,7 +47,15 @@ public class Robot extends IterativeRobot {
 		
 		gearSubsystem.shiftDown(); //forces start in low gear
 		intakePistonSubsystem.intakeUp(); //force intake to go up
-		RobotMap.mainCompressor.setClosedLoopControl(true);		
+		RobotMap.mainCompressor.setClosedLoopControl(true); 
+		
+		initCamera();//start camera feed
+    }
+    
+    public void initCamera(){
+    	server = CameraServer.getInstance();
+    	server.setQuality(100);
+    	server.startAutomaticCapture("cam1");	
     }
 	
 	/**
