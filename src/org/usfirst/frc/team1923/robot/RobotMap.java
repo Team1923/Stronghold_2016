@@ -41,6 +41,8 @@ public class RobotMap {
 	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,5,6);
 	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,4,7);
 	
+	public static DigitalInput leftLimitSwitch = new DigitalInput(0);//TODO find port
+	public static DigitalInput rightLimitSwitch = new DigitalInput(0); //TODO find port
 	
 	// Robot initializing
 	public static void init() {
