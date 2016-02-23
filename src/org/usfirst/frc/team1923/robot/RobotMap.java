@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1923.robot;
 
 import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.vision.AxisCamera;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -37,6 +38,9 @@ public class RobotMap {
 	public static Compressor mainCompressor = new Compressor(10);
 	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,5,6);
 	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,4,7);
+	
+	//camera
+	public static AxisCamera camera = new AxisCamera("10.19.23.108");
 	
 	
 	// Robot initializing
