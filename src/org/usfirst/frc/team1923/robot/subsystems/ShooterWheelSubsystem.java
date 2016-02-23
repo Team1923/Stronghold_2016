@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class ShooterWheelSubsystem extends Subsystem {
 	
 	private boolean isSpinning;
-    
+	    
 
     public void initDefaultCommand() {
 
@@ -23,13 +23,22 @@ public class ShooterWheelSubsystem extends Subsystem {
     		RobotMap.mainCompressor.setClosedLoopControl(false);
     		RobotMap.mainCompressor.stop();
     	}
-    	RobotMap.shooter.set(.5); //todo check for power + direction
+    	bangbangUp();
     	isSpinning = true;
     }
     
+    public void bangbangUp(){//TODO fix to work with encoders
+    	if(RobotMap.shooter.getOutputCurrent() < 25){
+    		RobotMap.shooter.set(RobotMap.shooter.get() + .05);
+    	} else if(RobotMap.shooter.getOutputCurrent() > 28){
+    		RobotMap.shooter.set(RobotMap.shooter.get() - .05);
+    	}
+    }
+   
+    
     public void stop(){
     	RobotMap.shooter.set(0); 
-    	if(!RobotMap.mainCompressor.getClosedLoopControl()){//start compressor loop again
+    	if(RobotMap.mainCompressor.getClosedLoopControl() == false){//start compressor loop again
     		RobotMap.mainCompressor.setClosedLoopControl(true);
     	}
     	isSpinning = false;

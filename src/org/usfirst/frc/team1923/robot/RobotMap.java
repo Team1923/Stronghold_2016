@@ -34,16 +34,16 @@ public class RobotMap {
 	
 	//Shooter Motor
 	public static CANTalon shooter = new CANTalon(1);
+
 	
 	
 	//Pneumatics 
 	public static Compressor mainCompressor = new Compressor(10);
 	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,5,6);
 	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,4,7);
-	
-	
+
 	// Robot initializing
 	public static void init() {
-
+		shooter.setVoltageRampRate(.05);
 	}
 }
