@@ -21,10 +21,7 @@ public class IntakeRollerSubsystem extends Subsystem {
     
     public void intake(){
     	//if both switches aren't pressed or the shooter is spinning
-    	if((!RobotMap.leftLimitSwitch.get() && !RobotMap.rightLimitSwitch.get()) || Robot.shooterWheelSubsystem.getStatus()){
     		RobotMap.intake.set(-1);//TODO Test for direction and speed
-    		intakeState="In";
-    	}
     }
     
     public void outake(){
