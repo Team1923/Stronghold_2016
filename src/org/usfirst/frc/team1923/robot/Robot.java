@@ -28,6 +28,7 @@ public class Robot extends IterativeRobot {
 	public static IntakeRollerSubsystem intakeRollerSubsystem = new IntakeRollerSubsystem();
 	public static IntakePistonSubsystem intakePistonSubsystem = new IntakePistonSubsystem();
 	public static ShooterWheelSubsystem shooterWheelSubsystem = new ShooterWheelSubsystem();
+	public static ShooterPistonSubsystem shooterPistonSubsystem = new ShooterPistonSubsystem();
 	
 	public static OI oi;
 
@@ -129,6 +130,9 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());
     	
     	SmartDashboard.putBoolean("Is spinning? ", shooterWheelSubsystem.getStatus());
+    	
+    	SmartDashboard.putNumber("left spin: ", RobotMap.shooterLeft.get());
+    	SmartDashboard.putNumber("right spin: " , RobotMap.shooterLeft.get());
     }
     
     /**

@@ -39,6 +39,9 @@ public class OI {
 		shifter.whenPressed(new GearShiftCommand());
 		
 		xboxController.rt.whileHeld(new ShooterWheelCommand());
+		xboxController.b.whenReleased(new ShooterPistonCommand());
+		
+		
 	
 	}
 }

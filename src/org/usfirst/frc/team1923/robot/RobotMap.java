@@ -1,4 +1,4 @@
-package org.usfirst.frc.team1923.robot;
+ package org.usfirst.frc.team1923.robot;
 
 import edu.wpi.first.wpilibj.*;
 
@@ -33,17 +33,19 @@ public class RobotMap {
 	public static CANTalon intake = new CANTalon(2);
 	
 	//Shooter Motor
-	public static CANTalon shooter = new CANTalon(1);
+	public static CANTalon shooterLeft = new CANTalon(0);
+	public static CANTalon shooterRight = new CANTalon(1);
 
 	
 	
 	//Pneumatics 
 	public static Compressor mainCompressor = new Compressor(10);
-	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,5,6);
-	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,4,7);
+	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,7,6);
+	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,4,5);
+	public static DoubleSolenoid shooterSolenoid = new DoubleSolenoid(10,2,3);
 
 	// Robot initializing
 	public static void init() {
-		shooter.setVoltageRampRate(.05);
+
 	}
 }
