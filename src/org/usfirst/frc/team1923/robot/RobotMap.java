@@ -30,11 +30,11 @@ public class RobotMap {
 	public static CANTalon rightDriveThree = new CANTalon(9);
 
 	// Intake Motor
-	public static CANTalon intake = new CANTalon(2);
+	public static CANTalon intake = new CANTalon(1);
 	
 	//Shooter Motor
-	public static CANTalon shooterLeft = new CANTalon(0);
-	public static CANTalon shooterRight = new CANTalon(1);
+	public static CANTalon shooterLeft = new CANTalon(2);
+	public static CANTalon shooterRight = new CANTalon(3);
 
 	
 	

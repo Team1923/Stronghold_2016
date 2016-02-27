@@ -27,17 +27,23 @@ public class ShooterWheelSubsystem extends Subsystem {
 //    	RobotMap.shooterRight.set(1);
     	RobotMap.mainCompressor.setClosedLoopControl(false);
 		RobotMap.mainCompressor.stop();
-    	bangbangUp();
+    	//setShooterPower(1);
+		bangbangUp();
     	isSpinning = true;
     }
     
+    public void setShooterPower(double power){
+    	RobotMap.shooterLeft.set(-power);
+    	RobotMap.shooterRight.set(power);
+    }
+    
     public void bangbangUp(){//TODO fix to work with encoders
-    	if(RobotMap.shooterLeft.getOutputCurrent() < 23){
-    		RobotMap.shooterLeft.set(RobotMap.shooterLeft.get() - .2);
-    		RobotMap.shooterRight.set(RobotMap.shooterRight.get() + .2);
-    	} else if(RobotMap.shooterLeft.getOutputCurrent() > 25){
-    		RobotMap.shooterLeft.set(RobotMap.shooterLeft.get() + .05);
-    		RobotMap.shooterRight.set(RobotMap.shooterRight.get() - .05);
+    	if(RobotMap.shooterLeft.getOutputCurrent() < 37){
+    		RobotMap.shooterLeft.set(RobotMap.shooterLeft.get() - .1);
+    		RobotMap.shooterRight.set(RobotMap.shooterRight.get() + .1);
+    	} else if(RobotMap.shooterLeft.getOutputCurrent() > 38){
+    		RobotMap.shooterLeft.set(RobotMap.shooterLeft.get() + .02);
+    		RobotMap.shooterRight.set(RobotMap.shooterRight.get() - .02);
     	}
     }
     

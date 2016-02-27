@@ -132,7 +132,7 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putBoolean("Is spinning? ", shooterWheelSubsystem.getStatus());
     	
     	SmartDashboard.putNumber("left spin: ", RobotMap.shooterLeft.get());
-    	SmartDashboard.putNumber("right spin: " , RobotMap.shooterLeft.get());
+    	SmartDashboard.putNumber("right spin: " , RobotMap.shooterRight.get());
     }
     
     /**
