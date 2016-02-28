@@ -40,6 +40,6 @@ public class OI {
 		
 		upShifter.whenPressed(new GearShiftCommand(true));
 		downShifter.whenPressed(new GearShiftCommand(false));
-	
+
 	}
 }

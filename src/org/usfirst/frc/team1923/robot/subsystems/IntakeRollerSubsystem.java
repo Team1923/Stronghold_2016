@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1923.robot.subsystems;
 
+import org.usfirst.frc.team1923.robot.Robot;
 import org.usfirst.frc.team1923.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -21,6 +22,7 @@ public class IntakeRollerSubsystem extends Subsystem {
     public void intake(){
     	RobotMap.intake.set(-1);
     	intakeState="In";
+
     }
     
     public void outake(){
