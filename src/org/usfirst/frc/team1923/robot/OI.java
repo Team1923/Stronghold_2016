@@ -16,7 +16,8 @@ public class OI {
 	
 	public Joystick rightStick;
 	
-	public JoystickButton shifter;
+	public JoystickButton upShifter,
+						downShifter;
 
 	public XboxController xboxController;
 	
@@ -28,7 +29,8 @@ public class OI {
 		//example binding: xboxController.a.whenPressed(...)
 		
 		//Joystick buttons
-		shifter = new JoystickButton(rightStick, 7);
+		upShifter = new JoystickButton(rightStick, 7);
+		downShifter = new JoystickButton(leftStick, 7);
 
 		//TODO: Button mappings to the subsystems
 		
@@ -36,12 +38,10 @@ public class OI {
 		xboxController.y.whileHeld(new IntakeRollerCommand("in"));
 		xboxController.x.whenReleased(new IntakePistonCommand());
 		
-		shifter.whenPressed(new GearShiftCommand());
+		upShifter.whenPressed(new GearShiftCommand(true));
+		downShifter.whenPressed(new GearShiftCommand(false));
 		
 		xboxController.rt.whileHeld(new ShooterWheelCommand());
 		xboxController.b.whenReleased(new ShooterPistonCommand());
-		
-		
-	
 	}
 }
