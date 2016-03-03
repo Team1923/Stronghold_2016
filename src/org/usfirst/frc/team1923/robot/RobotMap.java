@@ -30,7 +30,9 @@ public class RobotMap {
 	public static CANTalon rightDriveThree = new CANTalon(9);
 
 	// Intake Motor
-	public static CANTalon intake = new CANTalon(1);
+	public static CANTalon intake = new CANTalon(2);
+	public static DigitalInput limitSwitch1 = new DigitalInput(4);
+	public static DigitalInput limitSwitch2 = new DigitalInput(5);
 	
 	//Pneumatics 
 	public static Compressor mainCompressor = new Compressor(10);
