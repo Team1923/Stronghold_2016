@@ -51,6 +51,12 @@ public class Robot extends IterativeRobot {
 		RobotMap.mainCompressor.setClosedLoopControl(true); 
 		
 		initCamera();//start camera feed
+		
+		chooser = new SendableChooser();
+		chooser.addDefault("Do nothing", new AutonNothing());
+		chooser.addObject("low bar no shot", new AutonLowbarNoShot());
+		SmartDashboard.putData("Auto Mode", chooser);
+		
     }
     
     public void initCamera(){
@@ -76,15 +82,6 @@ public class Robot extends IterativeRobot {
 		Scheduler.getInstance().run();
 	}
 
-	/**
-	 * This autonomous (along with the chooser code above) shows how to select between different autonomous modes
-	 * using the dashboard. The sendable chooser code works with the Java SmartDashboard. If you prefer the LabVIEW
-	 * Dashboard, remove all of the chooser code and uncomment the getString code to get the auto name from the text box
-	 * below the Gyro
-	 *
-	 * You can add additional auto modes by adding additional commands to the chooser code above (like the commented example)
-	 * or additional comparisons to the switch structure below with additional strings & commands.
-	 */
     public void autonomousInit() {
         autonomousCommand = (Command) chooser.getSelected();
         
@@ -137,6 +134,8 @@ public class Robot extends IterativeRobot {
     	
     	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());
     	
+    	SmartDashboard.putNumber("Left Drive Encoder: ", RobotMap.leftDriveEncoder.get());
+    	SmartDashboard.putNumber("RIght Drive Encoder: ", RobotMap.rightDriveEncoder.get());	
     }
     
     /**
