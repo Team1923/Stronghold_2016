@@ -57,6 +57,7 @@ public class Robot extends IterativeRobot {
 		chooser.addDefault("Do nothing", new AutonNothing());
 		chooser.addObject("low bar no shot", new AutonLowbarNoShot());
 		//chooser.addObject("AutonPIDTest", new AutonDriveTest());
+		chooser.addObject("Wheelie TEST", new Wheelie());
 		SmartDashboard.putData("Auto Mode", chooser);
 		
     }
@@ -78,6 +79,17 @@ public class Robot extends IterativeRobot {
 			autonomousCommand.cancel();
 		if (teleopCommand != null)
 			teleopCommand.cancel();
+		
+		//Disabled shifting to low, talons to break
+		
+		Robot.gearSubsystem.shiftDown();
+		RobotMap.leftDriveOne.enableBrakeMode(true);
+		RobotMap.leftDriveTwo.enableBrakeMode(true);
+		RobotMap.leftDriveThree.enableBrakeMode(true);
+		RobotMap.rightDriveOne.enableBrakeMode(true);
+		RobotMap.rightDriveTwo.enableBrakeMode(true);
+		RobotMap.rightDriveThree.enableBrakeMode(true);
+		
     }
 	
 	public void disabledPeriodic() {

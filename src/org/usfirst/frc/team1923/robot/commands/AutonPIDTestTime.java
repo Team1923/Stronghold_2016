@@ -15,7 +15,7 @@
 //
 //    // Called just before this Command runs the first time
 //    protected void initialize() {
-//    	Robot.driveSubsystem.driveDistance(10);
+//    	Robot.driveSubsystem.driveDistance(40,3);	//3 second timeout for timed driving
 //    }
 //
 //    // Called repeatedly when this Command is scheduled to run

@@ -60,6 +60,4 @@ public class DriveTrainSubsytem extends Subsystem{
 				RobotMap.rightDriveTwo.get() != 0 ||
 				RobotMap.rightDriveThree.get() != 0);
 	}
-
-
 }
