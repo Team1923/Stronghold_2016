@@ -17,7 +17,7 @@ public class PIDDriveTrainSubsystem extends PIDSubsystem {
 	
 	private double oldLeftSpeed=0, oldRightSpeed=0;	//Used for smoothDrive
 	private static final double 
-	Pe = 0.000, Ie = 0.000, De = 0.000;	//TODO: Input those values
+	Pe = 0.015, Ie = 0.000, De = 0.03;	//TODO: Input those values
 	private static final double
 	ENC_DIST_TOLERANCE = 1.0, //Tolerance in distance units
 	WHEEL_CIRCUMFERENCE = 6*Math.PI,		//**** DISTANCE UNIT IN INCHES ****
