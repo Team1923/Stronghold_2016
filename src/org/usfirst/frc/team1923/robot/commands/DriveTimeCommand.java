@@ -26,7 +26,7 @@ public class DriveTimeCommand extends Command {
 	}
 
 	protected void execute() {
-		Robot.driveSubsystem.smoothDrive(speed, speed);
+		Robot.driveSubsystem.manualDrive(speed, speed);
 	}
 
 	protected boolean isFinished() {

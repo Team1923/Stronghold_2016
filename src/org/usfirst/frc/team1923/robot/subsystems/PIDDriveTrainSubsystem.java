@@ -64,6 +64,17 @@ public class PIDDriveTrainSubsystem extends PIDSubsystem {
 		this.timer.start();
     }
     
+    public void scalarDrive(double left, double right) {
+    	setManual(true);
+    	left = Math.sin(left);
+		right = Math.sin(right);
+		
+		smoothDrive(left, right);
+		
+    	this.timeOut= DEFAULT_TIMEOUT;
+    	this.timer.reset();
+    	this.timer.start();
+    }
     private void rawDrive(double l, double r) {		//Under the hood stuff
     	RobotMap.leftDriveOne.set(l);
     	RobotMap.leftDriveTwo.set(l);

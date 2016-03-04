@@ -24,7 +24,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	
 	public static GearSubsystem gearSubsystem = new GearSubsystem();
-	public static DriveTrainSubsytem driveSubsystem = new DriveTrainSubsytem();
+	public static PIDDriveTrainSubsystem driveSubsystem = new PIDDriveTrainSubsystem();
 	public static IntakeRollerSubsystem intakeRollerSubsystem = new IntakeRollerSubsystem();
 	public static IntakePistonSubsystem intakePistonSubsystem = new IntakePistonSubsystem();
 
