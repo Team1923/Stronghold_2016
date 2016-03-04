@@ -41,8 +41,8 @@ public class RobotMap {
 	public static DoubleSolenoid shooterSolenoid = new DoubleSolenoid(10,2,3);
 	
 	
-	public static Encoder leftDriveEncoder = new Encoder(0,1);
-	public static Encoder rightDriveEncoder = new Encoder(2,3);
+	public static Encoder leftDriveEncoder = new Encoder(1,0);
+	public static Encoder rightDriveEncoder = new Encoder(3,2);
 	
 	// Robot initializing
 	public static void init() {

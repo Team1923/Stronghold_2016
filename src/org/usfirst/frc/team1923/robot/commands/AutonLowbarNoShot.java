@@ -31,9 +31,7 @@ public class AutonLowbarNoShot extends CommandGroup {
     
     public AutonLowbarNoShot(double speed, double timeOut){
     	addSequential(new IntakePistonCommand());
-    	//addParallel(new IntakeRollerCommand("in"));
     	addSequential(new DriveTimeCommand(0, 1));
-    	//RobotMap.intake.set(0); //TODO: Make this a command/subsystem
     	addSequential(new DriveTimeCommand(speed,timeOut));
     }
 }
