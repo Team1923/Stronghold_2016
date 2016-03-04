@@ -24,7 +24,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	
 	public static GearSubsystem gearSubsystem = new GearSubsystem();
-//	public static PIDDriveTrainSubsystem driveSubsystem = new PIDDriveTrainSubsystem();
 	public static DriveTrainSubsytem driveSubsystem = new DriveTrainSubsytem();
 	public static IntakeRollerSubsystem intakeRollerSubsystem = new IntakeRollerSubsystem();
 	public static IntakePistonSubsystem intakePistonSubsystem = new IntakePistonSubsystem();
@@ -55,11 +54,8 @@ public class Robot extends IterativeRobot {
 		
 		chooser = new SendableChooser();
 		chooser.addDefault("Do nothing", new AutonNothing());
-		chooser.addObject("low bar no shot", new AutonLowbarNoShot());
-		//chooser.addObject("AutonPIDTest", new AutonDriveTest());
-		chooser.addObject("Wheelie TEST", new Wheelie());
+		chooser.addObject("low bar no shot", new DefenseAuton());
 		SmartDashboard.putData("Auto Mode", chooser);
-		
     }
     
     public void initCamera(){
@@ -146,10 +142,7 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putString("Intake Roller Status: ", intakeRollerSubsystem.getIntakeState());
     	SmartDashboard.putBoolean("Intake Down?: ", intakePistonSubsystem.intakePosition());
     	
-    	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());
-    	
-    	SmartDashboard.putNumber("Left Drive Encoder: ", RobotMap.leftDriveEncoder.get());
-    	SmartDashboard.putNumber("RIght Drive Encoder: ", RobotMap.rightDriveEncoder.get());	
+    	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());	
     }
     
     /**

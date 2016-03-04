@@ -33,8 +33,8 @@ public class OI {
 
 		leftTrigger = new JoystickButton(leftStick, 1);
 		rightTrigger = new JoystickButton(rightStick, 1);
+		
 		// TODO: Button mappings to the subsystems
-
 		xboxController.a.whileHeld(new IntakeRollerCommand("out"));
 		xboxController.y.whileHeld(new IntakeRollerCommand("in"));
 		xboxController.x.whenReleased(new IntakePistonCommand());

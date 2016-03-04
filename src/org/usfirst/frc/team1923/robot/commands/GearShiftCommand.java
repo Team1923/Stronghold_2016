@@ -28,10 +28,6 @@ public class GearShiftCommand extends Command {
 		} else{
 			Robot.gearSubsystem.shiftDown();
 		}
-		
-		//Robot.gearSubsystem.shift();
-		
-		
 	}
 
 	// Called repeatedly when this Command is scheduled to run

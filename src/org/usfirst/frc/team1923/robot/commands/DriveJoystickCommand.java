@@ -20,13 +20,11 @@ public class DriveJoystickCommand extends Command {
 	}
 
 	protected void execute() {
-		if (Robot.oi.leftTrigger.get() && Robot.oi.rightTrigger.get())
-		//If both trigger is pressed, then do the thing
-		{
+		if (Robot.oi.leftTrigger.get() && Robot.oi.rightTrigger.get()){
 			Scheduler.getInstance().removeAll();
-			// Not sure if needed to make Wheelie run immediately
 			Scheduler.getInstance().add(new Wheelie());
 		}
+		
 		Robot.driveSubsystem.scalarDrive(-Robot.oi.leftStick.getY(), Robot.oi.rightStick.getY());
 
 	}
