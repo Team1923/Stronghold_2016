@@ -4,21 +4,29 @@ import org.usfirst.frc.team1923.robot.Robot;
 import org.usfirst.frc.team1923.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Scheduler;
 
 /**
  * This command takes joystick input and runs tankDrive.
  *
  */
-public class DriveJoystickCommand extends Command{
+public class DriveJoystickCommand extends Command {
 
-	public DriveJoystickCommand(){
+	public DriveJoystickCommand() {
 		requires(Robot.driveSubsystem);
 	}
-	
-	protected void initialize() {	
+
+	protected void initialize() {
 	}
 
 	protected void execute() {
+		if (Robot.oi.leftTrigger.get() && Robot.oi.rightTrigger.get())
+		//If both trigger is pressed, then do the thing
+		{
+			Scheduler.getInstance().removeAll();
+			// Not sure if needed to make Wheelie run immediately
+			Scheduler.getInstance().add(new Wheelie());
+		}
 		Robot.driveSubsystem.scalarDrive(-Robot.oi.leftStick.getY(), Robot.oi.rightStick.getY());
 
 	}
@@ -29,7 +37,7 @@ public class DriveJoystickCommand extends Command{
 
 	protected void end() {
 		Robot.driveSubsystem.stop();
-		
+
 	}
 
 	protected void interrupted() {
