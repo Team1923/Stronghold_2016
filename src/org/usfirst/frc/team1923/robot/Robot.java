@@ -12,6 +12,7 @@ import org.usfirst.frc.team1923.robot.subsystems.*;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.vision.USBCamera;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -35,6 +36,8 @@ public class Robot extends IterativeRobot {
     public Command teleopCommand;
     public SendableChooser chooser; //TODO make a chooser 
     public CameraServer server;
+    
+    public USBCamera camera;
 
     /**
      * This function is run when the robot is first started up and should be

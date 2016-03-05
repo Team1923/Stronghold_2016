@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.command.Command;
 public class IntakeRollerCommand extends Command {
 
 	boolean direction;
-	Timer timer = new Timer();
 
 	public IntakeRollerCommand(String dir) {
 		// Use requires() here to declare subsystem dependencies
@@ -29,12 +28,8 @@ public class IntakeRollerCommand extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		//Delay detection function
+		//got rid of delay 
 		
-		if(!RobotMap.limitSwitch1.get() || !RobotMap.limitSwitch2.get())
-			timer.start();
-		
-		//
 		if (direction)
 			Robot.intakeRollerSubsystem.intake();
 		else
@@ -43,10 +38,7 @@ public class IntakeRollerCommand extends Command {
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		if (direction)
-			return ((timer.get()-0.2)>0);
-
-		return false;
+		return !RobotMap.limitSwitch1.get() || !RobotMap.limitSwitch2.get();
 	}
 
 	// Called once after isFinished returns true
