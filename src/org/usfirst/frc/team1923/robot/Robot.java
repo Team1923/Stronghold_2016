@@ -9,19 +9,12 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team1923.robot.commands.*;
 import org.usfirst.frc.team1923.robot.subsystems.*;
+import org.usfirst.frc.team1923.robot.utils.*;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.vision.USBCamera;
 
-/**
- * The VM is configured to automatically run this class, and to call the
- * functions corresponding to each mode, as described in the IterativeRobot
- * documentation. If you change the name of this class or the package after
- * creating this project, you must also update the manifest file in the resource
- * directory.
- * 
- */
 public class Robot extends IterativeRobot {
 	
 	public static GearSubsystem gearSubsystem = new GearSubsystem();
@@ -29,7 +22,6 @@ public class Robot extends IterativeRobot {
 	public static IntakeRollerSubsystem intakeRollerSubsystem = new IntakeRollerSubsystem();
 	public static IntakePistonSubsystem intakePistonSubsystem = new IntakePistonSubsystem();
 
-	
 	public static OI oi;
 
     public Command autonomousCommand;
@@ -38,11 +30,8 @@ public class Robot extends IterativeRobot {
     public CameraServer server;
     
     public USBCamera camera;
-
-    /**
-     * This function is run when the robot is first started up and should be
-     * used for any initialization code.
-     */
+    
+    
     public void robotInit() {
 		oi = new OI(); 
 				
@@ -53,26 +42,21 @@ public class Robot extends IterativeRobot {
 		intakePistonSubsystem.intakeUp(); //force intake to go up
 		RobotMap.mainCompressor.setClosedLoopControl(true); 
 		
-		initCamera();//start camera feed
 		
-		chooser = new SendableChooser();
-		chooser.addDefault("Do nothing", new AutonNothing());
-		chooser.addObject("low bar no shot", new DefenseAuton());
-		SmartDashboard.putData("Auto Mode", chooser);
+		initCamera();//start camera feed
     }
     
     public void initCamera(){
+    	camera = new USBCamera("cam1");
+
     	server = CameraServer.getInstance();
-    	server.setQuality(100);
-    	server.startAutomaticCapture("cam1");	
+    	server.setQuality(50);
+    	server.startAutomaticCapture(camera);	
+
+    	
     }
 
-	
-	/**
-     * This function is called once each time the robot enters Disabled mode.
-     * You can use it to reset any subsystem information you want to clear when
-	 * the robot is disabled.
-     */
+
     public void disabledInit(){
     	if (autonomousCommand != null)
 			autonomousCommand.cancel();
@@ -89,6 +73,9 @@ public class Robot extends IterativeRobot {
 		RobotMap.rightDriveTwo.enableBrakeMode(true);
 		RobotMap.rightDriveThree.enableBrakeMode(true);
 		
+//		camera.stopCapture();
+//		camera.closeCamera();
+		
     }
 	
 	public void disabledPeriodic() {
@@ -96,21 +83,8 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
-        autonomousCommand = (Command) chooser.getSelected();
-        
-		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
-		switch(autoSelected) {
-		case "My Auto":
-			autonomousCommand = new MyAutoCommand();
-			break;
-		case "Default Auto":
-		default:
-			autonomousCommand = new ExampleCommand();
-			break;
-		} */
-    	
-    	// schedule the autonomous command (example)
-        if (autonomousCommand != null) autonomousCommand.start();
+        autonomousCommand = (Command) new DefenseAuton();
+        autonomousCommand.start();
     }
 
     /**

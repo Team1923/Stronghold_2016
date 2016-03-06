@@ -38,7 +38,7 @@ public class IntakeRollerCommand extends Command {
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return !RobotMap.limitSwitch1.get() || !RobotMap.limitSwitch2.get();
+		return false;
 	}
 
 	// Called once after isFinished returns true

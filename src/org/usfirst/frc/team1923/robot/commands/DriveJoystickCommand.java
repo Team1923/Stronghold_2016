@@ -22,7 +22,7 @@ public class DriveJoystickCommand extends Command {
 	protected void execute() {
 		if (Robot.oi.leftTrigger.get() && Robot.oi.rightTrigger.get()){
 			Scheduler.getInstance().removeAll();
-			Scheduler.getInstance().add(new Wheelie());
+			Scheduler.getInstance().add(new WheelieCommand());
 		}
 		
 		Robot.driveSubsystem.scalarDrive(-Robot.oi.leftStick.getY(), Robot.oi.rightStick.getY());

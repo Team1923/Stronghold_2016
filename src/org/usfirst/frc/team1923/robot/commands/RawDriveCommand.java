@@ -33,6 +33,7 @@ public class RawDriveCommand extends Command {
     		right = 1;
     	else if(right<-1)
     		right=-1;
+    	
     	t.reset();
     	t.start();
     }

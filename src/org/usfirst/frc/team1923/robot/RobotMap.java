@@ -2,17 +2,6 @@
 
 import edu.wpi.first.wpilibj.*;
 
-/**
- * The RobotMap is a mapping from the ports sensors and actuators are wired into
- * to a variable name. This provides flexibility changing wiring, makes checking
- * the wiring easier and significantly reduces the number of magic numbers
- * floating around.
- * 
- * @modified Xavier 1/17/2016
- * @modified by Aravind 1/17/2016
- * @modified by Aravind 1/31/2016
- * @modified by Aravind 2/3/2016
- */
 public class RobotMap {
 
 
