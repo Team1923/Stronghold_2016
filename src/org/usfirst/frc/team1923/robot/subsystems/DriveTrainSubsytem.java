@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class DriveTrainSubsytem extends Subsystem{
 	
-	final double SCALE_CONSTANT = 3;
 	public double oldLeftSpeed = 0,
 			oldRightSpeed = 0;
 
@@ -35,9 +34,6 @@ public class DriveTrainSubsytem extends Subsystem{
 	}
 
 	public void scalarDrive(double left, double right){
-//		left = Math.pow(left, SCALE_CONSTANT);
-//		right = Math.pow(right, SCALE_CONSTANT);
-		
 		left = Math.sin(left);
 		right = Math.sin(right);
 		
@@ -64,6 +60,4 @@ public class DriveTrainSubsytem extends Subsystem{
 				RobotMap.rightDriveTwo.get() != 0 ||
 				RobotMap.rightDriveThree.get() != 0);
 	}
-
-
 }

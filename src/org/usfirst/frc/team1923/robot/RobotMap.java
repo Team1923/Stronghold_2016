@@ -1,18 +1,7 @@
-package org.usfirst.frc.team1923.robot;
+ package org.usfirst.frc.team1923.robot;
 
 import edu.wpi.first.wpilibj.*;
 
-/**
- * The RobotMap is a mapping from the ports sensors and actuators are wired into
- * to a variable name. This provides flexibility changing wiring, makes checking
- * the wiring easier and significantly reduces the number of magic numbers
- * floating around.
- * 
- * @modified Xavier 1/17/2016
- * @modified by Aravind 1/17/2016
- * @modified by Aravind 1/31/2016
- * @modified by Aravind 2/3/2016
- */
 public class RobotMap {
 
 
@@ -31,16 +20,19 @@ public class RobotMap {
 
 	// Intake Motor
 	public static CANTalon intake = new CANTalon(2);
-	
+	public static DigitalInput limitSwitch1 = new DigitalInput(4);
+	public static DigitalInput limitSwitch2 = new DigitalInput(5);
 	
 	//Pneumatics 
 	public static Compressor mainCompressor = new Compressor(10);
-	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,5,6);
-	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,4,7);
+	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,7,6);
+	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,4,5);
+	public static DoubleSolenoid shooterSolenoid = new DoubleSolenoid(10,2,3);
 	
 	//encoders
 	public static Encoder leftDriveEncoder = new Encoder(2, 3);
 	public static Encoder rightDriveEncoder = new Encoder(0, 1);
+	
 	
 	
 	// Robot initializing
