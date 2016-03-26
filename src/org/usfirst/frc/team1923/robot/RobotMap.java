@@ -18,6 +18,10 @@ public class RobotMap {
 	public static CANTalon rightDriveTwo = new CANTalon(8);
 	public static CANTalon rightDriveThree = new CANTalon(9);
 
+    //Shooter Motors
+    public static CANTalon shooterRight = new CANTalon(0);
+    public static CANTalon shooterLeft = new CANTalon(1);
+
 	// Intake Motor
 	public static CANTalon intake = new CANTalon(2);
 	public static DigitalInput limitSwitch1 = new DigitalInput(4);

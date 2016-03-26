@@ -21,6 +21,7 @@ public class Robot extends IterativeRobot {
 	public static DriveTrainSubsytem driveSubsystem = new DriveTrainSubsytem();
 	public static IntakeRollerSubsystem intakeRollerSubsystem = new IntakeRollerSubsystem();
 	public static IntakePistonSubsystem intakePistonSubsystem = new IntakePistonSubsystem();
+    public static ShooterSubsystem shooterSubsystem = new ShooterSubsystem();
 
 	public static OI oi;
 
@@ -47,13 +48,13 @@ public class Robot extends IterativeRobot {
     }
     
     public void initCamera(){
-    	camera = new USBCamera("cam1");
+    	camera = new USBCamera("cam0");//cam1 for knightmare
+//    	camera.setExposureManual(50);
+//    	camera.updateSettings();
     	
     	server = CameraServer.getInstance();
     	server.setQuality(50);
     	server.startAutomaticCapture(camera);	
-
-    	
     }
 
 
