@@ -29,9 +29,9 @@ public class RobotMap {
 	
 	//Pneumatics 
 	public static Compressor mainCompressor = new Compressor(10);
-	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,7,6);
-	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,4,5);
-	public static DoubleSolenoid shooterSolenoid = new DoubleSolenoid(10,2,3);
+	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,0,1);
+	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,2,3);
+	public static DoubleSolenoid shooterSolenoid = new DoubleSolenoid(10,6,7);
 	
 	// Robot initializing
 	public static void init() {

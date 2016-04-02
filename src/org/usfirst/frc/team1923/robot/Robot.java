@@ -21,7 +21,8 @@ public class Robot extends IterativeRobot {
 	public static DriveTrainSubsytem driveSubsystem = new DriveTrainSubsytem();
 	public static IntakeRollerSubsystem intakeRollerSubsystem = new IntakeRollerSubsystem();
 	public static IntakePistonSubsystem intakePistonSubsystem = new IntakePistonSubsystem();
-    public static ShooterSubsystem shooterSubsystem = new ShooterSubsystem();
+    public static ShooterPistonSubsystem shooterPistonSubsystem = new ShooterPistonSubsystem();
+    public static ShooterWheelSubsystem shooterWheelSubsystem = new ShooterWheelSubsystem();
 
 	public static OI oi;
 
@@ -41,6 +42,7 @@ public class Robot extends IterativeRobot {
 		
 		gearSubsystem.shiftDown(); //forces start in low gear
 		intakePistonSubsystem.intakeUp(); //force intake to go up
+		shooterPistonSubsystem.shooterDown(); //force shooter down
 		RobotMap.mainCompressor.setClosedLoopControl(true); 
 		
 		

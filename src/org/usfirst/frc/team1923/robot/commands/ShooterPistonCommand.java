@@ -1,19 +1,22 @@
 package org.usfirst.frc.team1923.robot.commands;
 
+import org.usfirst.frc.team1923.robot.Robot;
+import org.usfirst.frc.team1923.robot.subsystems.ShooterPistonSubsystem;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class ShooterCommand extends Command {
+public class ShooterPistonCommand extends Command {
 
-    public ShooterCommand() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+    public ShooterPistonCommand() {
+        requires(new ShooterPistonSubsystem());
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.shooterPistonSubsystem.toggle();
     }
 
     // Called repeatedly when this Command is scheduled to run
