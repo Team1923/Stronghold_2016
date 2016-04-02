@@ -42,7 +42,10 @@ public class OI {
 		upShifter.whenPressed(new GearShiftCommand(true));
 		downShifter.whenPressed(new GearShiftCommand(false));
 		
-		xboxController.b.whenReleased(new ShooterPistonCommand());
+		xboxController.rt.whenReleased(new ShooterPistonCommand(false));
+		xboxController.lt.whenReleased(new ShooterPistonCommand(true));
+		
+		xboxController.b.whileHeld(new ShooterWheelCommand());
         
 	}
 }

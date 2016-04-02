@@ -1,23 +1,27 @@
 package org.usfirst.frc.team1923.robot.commands;
 
+import org.usfirst.frc.team1923.robot.Robot;
+import org.usfirst.frc.team1923.robot.subsystems.ShooterWheelSubsystem;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
 public class ShooterWheelCommand extends Command {
-
+		
     public ShooterWheelCommand() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(new ShooterWheelSubsystem());
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.shooterWheelSubsystem.spinUp();
     }
 
     // Make this return true when this Command no longer needs to run execute()

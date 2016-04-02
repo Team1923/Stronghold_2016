@@ -29,7 +29,6 @@ public class IntakeRollerCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
 		//got rid of delay 
-		
 		if (direction)
 			Robot.intakeRollerSubsystem.intake();
 		else

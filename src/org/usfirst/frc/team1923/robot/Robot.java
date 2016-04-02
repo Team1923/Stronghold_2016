@@ -45,14 +45,13 @@ public class Robot extends IterativeRobot {
 		shooterPistonSubsystem.shooterDown(); //force shooter down
 		RobotMap.mainCompressor.setClosedLoopControl(true); 
 		
-		
 		initCamera();//start camera feed
     }
     
     public void initCamera(){
     	camera = new USBCamera("cam0");//cam1 for knightmare
-//    	camera.setExposureManual(50);
-//    	camera.updateSettings();
+    	camera.setFPS(20);
+    	camera.updateSettings();
     	
     	server = CameraServer.getInstance();
     	server.setQuality(50);
@@ -123,6 +122,8 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putBoolean("Intake Down?: ", intakePistonSubsystem.intakePosition());
     	
     	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());	
+    	
+    	SmartDashboard.putNumber("Shooter Encoder Rate: ", RobotMap.shooterEncoder.getRate());
     }
     
     /**

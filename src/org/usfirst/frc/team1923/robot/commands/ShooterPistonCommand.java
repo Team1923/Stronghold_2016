@@ -10,13 +10,20 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class ShooterPistonCommand extends Command {
 
-    public ShooterPistonCommand() {
+	boolean down;
+	
+    public ShooterPistonCommand(boolean userInput) {
         requires(new ShooterPistonSubsystem());
+        down = userInput;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.shooterPistonSubsystem.toggle();
+    	if(down){
+    		Robot.shooterPistonSubsystem.shooterDown();
+    	} else{
+    		Robot.shooterPistonSubsystem.shooterUp();
+    	}
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -25,7 +32,7 @@ public class ShooterPistonCommand extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
