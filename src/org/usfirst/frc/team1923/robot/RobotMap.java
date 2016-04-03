@@ -21,7 +21,7 @@ public class RobotMap {
     //Shooter Motors
     public static CANTalon shooterRight = new CANTalon(0);
     public static CANTalon shooterLeft = new CANTalon(1);
-    public static Encoder shooterEncoder = new Encoder(0,1);
+    public static Encoder shooterEncoder = new Encoder(1,0);
 
 	// Intake Motor
 	public static CANTalon intake = new CANTalon(2);
@@ -37,6 +37,6 @@ public class RobotMap {
 	// Robot initializing
 	public static void init() {
 		shooterEncoder.reset();
-		shooterEncoder.setDistancePerPulse(1);
+		shooterEncoder.setDistancePerPulse(.5);
 	}
 }
