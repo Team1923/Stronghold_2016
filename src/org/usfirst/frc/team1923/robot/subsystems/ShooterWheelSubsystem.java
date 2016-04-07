@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class ShooterWheelSubsystem extends Subsystem {
 	
-	private final int CONSTANT_RATE = 3000;
+	private final int CONSTANT_RATE = 650;
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -20,12 +20,12 @@ public class ShooterWheelSubsystem extends Subsystem {
     }
     
     public void spinUp(){
-//    	if(RobotMap.shooterEncoder.getRate() > CONSTANT_RATE){
-//    		setShooterPower(0);
-//    	} else{
-//    		setShooterPower(-1);
-//    	}
-    	setShooterPower(-1);
+    	if(RobotMap.shooterEncoder.getRate() > CONSTANT_RATE){
+    		setShooterPower(0);
+    	} else{
+    		setShooterPower(-1);
+    	}
+//    	setShooterPower(-1);
     	
     }
     

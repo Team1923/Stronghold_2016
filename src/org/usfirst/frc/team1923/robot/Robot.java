@@ -124,6 +124,8 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());	
     	
     	SmartDashboard.putNumber("Shooter Encoder Rate: ", RobotMap.shooterEncoder.getRate());
+    	//SmartDashboard.putNumber("Shooter Left Amp: ", RobotMap.shooterLeft.getOutputCurrent());
+    	//SmartDashboard.putNumber("Shooter Right Amp: " , RobotMap.shooterRight.getOutputCurrent());
     }
     
     /**

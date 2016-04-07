@@ -12,12 +12,12 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class IntakeRollerCommand extends Command {
 
-	boolean direction;
+	String direction;
 
 	public IntakeRollerCommand(String dir) {
 		// Use requires() here to declare subsystem dependencies
 		requires(new IntakeRollerSubsystem());
-		direction = dir.equals("in");
+		direction = dir;
 	}
 
 	// Called just before this Command runs the first time
@@ -28,16 +28,17 @@ public class IntakeRollerCommand extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		//got rid of delay 
-		if (direction)
+		if (direction.equals("in"))
 			Robot.intakeRollerSubsystem.intake();
-		else
+		else if(direction.equalsIgnoreCase("out"))
 			Robot.intakeRollerSubsystem.outake();
+		else
+			Robot.intakeRollerSubsystem.neutral();
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return false;
+		return !(direction.equalsIgnoreCase("in") || direction.equalsIgnoreCase("out"));
 	}
 
 	// Called once after isFinished returns true
