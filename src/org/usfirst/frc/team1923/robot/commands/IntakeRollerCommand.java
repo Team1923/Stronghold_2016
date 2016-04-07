@@ -28,7 +28,8 @@ public class IntakeRollerCommand extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		if (direction.equals("in"))
+		//check to see limit switch 
+		if (direction.equals("in") && RobotMap.limitSwitch1.get() && RobotMap.limitSwitch2.get())
 			Robot.intakeRollerSubsystem.intake();
 		else if(direction.equalsIgnoreCase("out"))
 			Robot.intakeRollerSubsystem.outake();

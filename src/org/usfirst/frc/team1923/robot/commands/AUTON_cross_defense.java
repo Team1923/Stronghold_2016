@@ -7,13 +7,13 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class DefenseAuton extends CommandGroup {
+public class AUTON_cross_defense extends CommandGroup {
     
-    public  DefenseAuton() {
+    public  AUTON_cross_defense() {
     	this(0.7,4);
     }
     
-    public DefenseAuton(double speed, double timeOut){
+    public AUTON_cross_defense(double speed, double timeOut){
     	addSequential(new IntakePistonCommand());
     	addSequential(new DriveTimeCommand(0, 1));
     	addSequential(new DriveTimeCommand(speed,timeOut));

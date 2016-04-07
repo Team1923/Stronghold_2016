@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  *
  */
 
-public class AutonNothing extends CommandGroup{
+public class AUTON_nothing extends CommandGroup{
 
-	public AutonNothing(){
+	public AUTON_nothing(){
 		//robot is doing nothing....
 	}
 }

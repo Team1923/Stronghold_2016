@@ -28,24 +28,35 @@ public class Robot extends IterativeRobot {
 
     public Command autonomousCommand;
     public Command teleopCommand;
-    public SendableChooser chooser; //TODO make a chooser 
+    public SendableChooser chooser;  
     public CameraServer server;
     
     public USBCamera camera;
     
     
-    public void robotInit() {
+    public void robotInit() {    	
 		oi = new OI(); 
-				
-		chooser = new SendableChooser();
 		teleopCommand = new TeleopCommand();
+		chooser = new SendableChooser();
 		
-		gearSubsystem.shiftDown(); //forces start in low gear
+		initializeAutons();//make auto
+		defaultRobotPosition(); //force robot into match config
+		initCamera();//start camera feed
+    }
+    
+    public void initializeAutons(){
+    	chooser.addDefault("Cross Defense", new AUTON_cross_defense());
+		chooser.addObject("Starvation", new AUTON_starvation());
+		chooser.addObject("Take the L", new AUTON_nothing());
+		log();
+		//SmartDashboard.putData("Auton Chooser: ", chooser);
+    }
+    
+    public void defaultRobotPosition(){
+    	gearSubsystem.shiftDown(); //forces start in low gear
 		intakePistonSubsystem.intakeUp(); //force intake to go up
 		shooterPistonSubsystem.shooterDown(); //force shooter down
 		RobotMap.mainCompressor.setClosedLoopControl(true); 
-		
-		initCamera();//start camera feed
     }
     
     public void initCamera(){
@@ -75,8 +86,8 @@ public class Robot extends IterativeRobot {
 		RobotMap.rightDriveTwo.enableBrakeMode(true);
 		RobotMap.rightDriveThree.enableBrakeMode(true);
 		
-//		camera.stopCapture();
-//		camera.closeCamera();
+		camera.stopCapture();
+		camera.closeCamera();
 		
     }
 	
@@ -85,7 +96,7 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
-        autonomousCommand = (Command) new DefenseAuton();
+        autonomousCommand = (Command) chooser.getSelected();
         autonomousCommand.start();
     }
 
@@ -124,8 +135,14 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());	
     	
     	SmartDashboard.putNumber("Shooter Encoder Rate: ", RobotMap.shooterEncoder.getRate());
-    	//SmartDashboard.putNumber("Shooter Left Amp: ", RobotMap.shooterLeft.getOutputCurrent());
-    	//SmartDashboard.putNumber("Shooter Right Amp: " , RobotMap.shooterRight.getOutputCurrent());
+    	
+    	SmartDashboard.putNumber("Right Drive Encoder: ", RobotMap.rightDriveEncoder.get());
+    	SmartDashboard.putNumber("Left Drive Encoder: ", RobotMap.leftDriveEncoder.get());
+    	
+    	SmartDashboard.putBoolean("Intake Switch 1: ", RobotMap.limitSwitch1.get());
+    	SmartDashboard.putBoolean("Intake Switch 2: ", RobotMap.limitSwitch2.get());
+    	
+		SmartDashboard.putData("Auton Chooser: ", chooser);
     }
     
     /**
