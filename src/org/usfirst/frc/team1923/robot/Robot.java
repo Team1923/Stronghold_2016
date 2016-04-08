@@ -100,18 +100,11 @@ public class Robot extends IterativeRobot {
         autonomousCommand.start();
     }
 
-    /**
-     * This function is called periodically during autonomous
-     */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
     }
 
     public void teleopInit() {
-		// This makes sure that the autonomous stops running when
-        // teleop starts running. If you want the autonomous to 
-        // continue until interrupted by another command, remove
-        // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
@@ -124,30 +117,27 @@ public class Robot extends IterativeRobot {
         log();
     }
     
-    
     public void log(){
+    	SmartDashboard.putData("Auton Chooser: ", chooser);
+    	
     	SmartDashboard.putNumber("left joy: ", oi.leftStick.getY());
     	SmartDashboard.putNumber("right joy: ", oi.rightStick.getY());
+    	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());	
     	
     	SmartDashboard.putString("Intake Roller Status: ", intakeRollerSubsystem.getIntakeState());
     	SmartDashboard.putBoolean("Intake Down?: ", intakePistonSubsystem.intakePosition());
-    	
-    	SmartDashboard.putBoolean("Low Gear: ", gearSubsystem.getGearPosition());	
-    	
-    	SmartDashboard.putNumber("Shooter Encoder Rate: ", RobotMap.shooterEncoder.getRate());
-    	
-    	SmartDashboard.putNumber("Right Drive Encoder: ", RobotMap.rightDriveEncoder.get());
-    	SmartDashboard.putNumber("Left Drive Encoder: ", RobotMap.leftDriveEncoder.get());
-    	
     	SmartDashboard.putBoolean("Intake Switch 1: ", RobotMap.limitSwitch1.get());
     	SmartDashboard.putBoolean("Intake Switch 2: ", RobotMap.limitSwitch2.get());
     	
-		SmartDashboard.putData("Auton Chooser: ", chooser);
+    	SmartDashboard.putBoolean("Shooter Hood Down?: ", shooterPistonSubsystem.position());
+    	SmartDashboard.putBoolean("READY?!: ", RobotMap.shooterEncoder.getRate() > 650 && RobotMap.shooterEncoder.getRate() < 750);
+    	SmartDashboard.putNumber("Shooter Encoder Rate: ", RobotMap.shooterEncoder.getRate());
+    	
+//    	SmartDashboard.putNumber("Right Drive Encoder: ", RobotMap.rightDriveEncoder.get());
+//    	SmartDashboard.putNumber("Left Drive Encoder: ", RobotMap.leftDriveEncoder.get());
     }
     
-    /**
-     * This function is called periodically during test mode
-     */
+
     public void testPeriodic() {
         LiveWindow.run();
     }

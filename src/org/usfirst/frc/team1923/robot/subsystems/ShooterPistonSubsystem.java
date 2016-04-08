@@ -34,5 +34,9 @@ public class ShooterPistonSubsystem extends Subsystem {
     	down = true;
     	RobotMap.shooterSolenoid.set(DoubleSolenoid.Value.kReverse);
     }
+    
+    public boolean position(){
+    	return down;
+    }
 }
 

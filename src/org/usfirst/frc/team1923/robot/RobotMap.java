@@ -15,18 +15,18 @@ public class RobotMap {
 	public static CANTalon rightDriveOne = new CANTalon(7);
 	public static CANTalon rightDriveTwo = new CANTalon(8);
 	public static CANTalon rightDriveThree = new CANTalon(9);
-	public static Encoder rightDriveEncoder = new Encoder(2,3);
-	public static Encoder leftDriveEncoder = new Encoder(4,5);
+//	public static Encoder rightDriveEncoder = new Encoder(2,3);
+//	public static Encoder leftDriveEncoder = new Encoder(4,5);
 
     //Shooter
     public static CANTalon shooterRight = new CANTalon(0);
     public static CANTalon shooterLeft = new CANTalon(1);
-    public static Encoder shooterEncoder = new Encoder(1,0);
+    public static Encoder shooterEncoder = new Encoder(2,3);
 
 	// Intake
 	public static CANTalon intake = new CANTalon(2);
-	public static DigitalInput limitSwitch1 = new DigitalInput(6);
-	public static DigitalInput limitSwitch2 = new DigitalInput(7);
+	public static DigitalInput limitSwitch1 = new DigitalInput(0);
+	public static DigitalInput limitSwitch2 = new DigitalInput(1);
 	
 	//Pneumatics 
 	public static Compressor mainCompressor = new Compressor(10);
@@ -45,11 +45,11 @@ public class RobotMap {
 		shooterEncoder.reset();
 		shooterEncoder.setDistancePerPulse(.5);
 		
-		leftDriveEncoder.reset();
-		leftDriveEncoder.setDistancePerPulse(DISTANCE_PER_PULSE);
-		
-		rightDriveEncoder.reset();
-		rightDriveEncoder.setDistancePerPulse(DISTANCE_PER_PULSE);
+//		leftDriveEncoder.reset();
+//		leftDriveEncoder.setDistancePerPulse(DISTANCE_PER_PULSE);
+//		
+//		rightDriveEncoder.reset();
+//		rightDriveEncoder.setDistancePerPulse(DISTANCE_PER_PULSE);
 	}
 	
 	public static void initializeTalons(){
