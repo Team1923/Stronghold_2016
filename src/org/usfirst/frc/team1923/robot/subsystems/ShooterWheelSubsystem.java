@@ -22,8 +22,9 @@ public class ShooterWheelSubsystem extends Subsystem {
     	if(RobotMap.shooterEncoder.getRate() > CONSTANT_RATE){
     		setShooterPower(0);
     	} else{
-    		setShooterPower(-1);
+    		setShooterPower(1);
     	}
+//    	setShooterPower(1);
     	
     }
     

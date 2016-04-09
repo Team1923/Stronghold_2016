@@ -61,8 +61,8 @@ public class Robot extends IterativeRobot {
     
     public void initCamera(){
     	camera = new USBCamera("cam0");//cam1 for knightmare
-    	camera.setFPS(20);
-    	camera.updateSettings();
+    	//camera.setFPS(20);
+    	//camera.updateSettings();
     	
     	server = CameraServer.getInstance();
     	server.setQuality(50);
@@ -86,8 +86,8 @@ public class Robot extends IterativeRobot {
 		RobotMap.rightDriveTwo.enableBrakeMode(true);
 		RobotMap.rightDriveThree.enableBrakeMode(true);
 		
-		camera.stopCapture();
-		camera.closeCamera();
+//		camera.stopCapture();
+//		camera.closeCamera();
 		
     }
 	
@@ -129,12 +129,22 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putBoolean("Intake Switch 1: ", RobotMap.limitSwitch1.get());
     	SmartDashboard.putBoolean("Intake Switch 2: ", RobotMap.limitSwitch2.get());
     	
-    	SmartDashboard.putBoolean("Shooter Hood Down?: ", shooterPistonSubsystem.position());
-    	SmartDashboard.putBoolean("READY?!: ", RobotMap.shooterEncoder.getRate() > 650 && RobotMap.shooterEncoder.getRate() < 750);
+    	SmartDashboard.putBoolean("Shooter Hood Up?: ", !shooterPistonSubsystem.position());
+    	SmartDashboard.putBoolean("READY?!: ", readyToShooter());
     	SmartDashboard.putNumber("Shooter Encoder Rate: ", RobotMap.shooterEncoder.getRate());
+    	
+    	SmartDashboard.putNumber("RIGHT:" , RobotMap.shooterLeft.get());
+    	SmartDashboard.putNumber("LEFT: ", RobotMap.shooterRight.get());
+    	
+    	SmartDashboard.putBoolean("call: ", oi.xboxController.rb.get());
+    	SmartDashboard.putBoolean("response: ", Robot.intakeRollerSubsystem.getOverride());
     	
 //    	SmartDashboard.putNumber("Right Drive Encoder: ", RobotMap.rightDriveEncoder.get());
 //    	SmartDashboard.putNumber("Left Drive Encoder: ", RobotMap.leftDriveEncoder.get());
+    }
+    
+    public boolean readyToShooter(){
+    	return RobotMap.shooterEncoder.getRate() > 675 && RobotMap.shooterEncoder.getRate() < 750 && !shooterPistonSubsystem.position();
     }
     
 

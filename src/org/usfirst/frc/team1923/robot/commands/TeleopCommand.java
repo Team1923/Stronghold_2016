@@ -9,5 +9,6 @@ public class TeleopCommand extends CommandGroup {
     
     public  TeleopCommand() {
     	addParallel(new DriveJoystickCommand());
+    	addParallel(new HoodManagementCommand());
     }
 }

@@ -46,6 +46,10 @@ public class OI {
 		xboxController.rt.whenReleased(new ShooterPistonCommand(false));
 		xboxController.lt.whenReleased(new ShooterPistonCommand(true));
 		xboxController.b.whileHeld(new ShooterWheelCommand());
+		
+		if(xboxController.rb.get()){
+			Robot.intakeRollerSubsystem.setOverride(true);
+		}
         
 	}
 }

@@ -2,29 +2,29 @@ package org.usfirst.frc.team1923.robot.commands;
 
 import org.usfirst.frc.team1923.robot.Robot;
 import org.usfirst.frc.team1923.robot.RobotMap;
-import org.usfirst.frc.team1923.robot.subsystems.ShooterWheelSubsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class ShooterWheelCommand extends Command {
-		
-    public ShooterWheelCommand() {
-        requires(new ShooterWheelSubsystem());
+public class HoodManagementCommand extends Command {
+
+    public HoodManagementCommand() {
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.shooterPistonSubsystem.shooterUp();
-    	RobotMap.mainCompressor.stop();
-    	RobotMap.mainCompressor.setClosedLoopControl(false);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooterWheelSubsystem.spinUp();
+    	if(RobotMap.shooterEncoder.getRate() > 600)
+    		Robot.shooterPistonSubsystem.shooterUp();
+    	else if(RobotMap.shooterEncoder.getRate() < 500)
+    		Robot.shooterPistonSubsystem.shooterDown();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -34,14 +34,10 @@ public class ShooterWheelCommand extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.shooterWheelSubsystem.setShooterPower(0);
-    	RobotMap.mainCompressor.start();
-    	RobotMap.mainCompressor.setClosedLoopControl(true);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	end();
     }
 }

@@ -14,8 +14,8 @@ public class AUTON_starvation extends CommandGroup {
     	addSequential(new DriveTimeCommand(.6,4));
     	
     	//drop ball
-    	addSequential(new IntakeRollerCommand("out"));
-    	addSequential(new DriveTimeCommand(-.6,4));
+    	addParallel(new IntakeRollerCommand("auton"));
+    	addParallel(new DriveTimeCommand(-.6,4));
     	
     }
 }

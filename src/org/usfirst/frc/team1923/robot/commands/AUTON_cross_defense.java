@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AUTON_cross_defense extends CommandGroup {
     
     public  AUTON_cross_defense() {
-    	this(0.7,4);
+    	this(0.9,3.5);
     }
     
     public AUTON_cross_defense(double speed, double timeOut){

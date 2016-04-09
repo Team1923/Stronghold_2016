@@ -14,6 +14,7 @@ public class IntakeRollerSubsystem extends Subsystem {
     // here. Call these from Commands.
 	
 	private String intakeState = "Neutral";
+	private boolean override = false;
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -38,5 +39,15 @@ public class IntakeRollerSubsystem extends Subsystem {
     public String getIntakeState(){
     	return intakeState;
     }
+    
+    public void setOverride(boolean bool){
+    	override = bool;
+    }
+    
+    public boolean getOverride(){
+    	return override;
+    }
+    
+    
 }
 
