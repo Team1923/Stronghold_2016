@@ -11,8 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class HoodManagementCommand extends Command {
 
     public HoodManagementCommand() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(Robot.shooterPistonSubsystem);
     }
 
     // Called just before this Command runs the first time
@@ -34,6 +33,7 @@ public class HoodManagementCommand extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.shooterPistonSubsystem.shooterDown();
     }
 
     // Called when another command which requires one or more of the same

@@ -22,7 +22,7 @@ public class GearSubsystem extends Subsystem {
      */
     public void shiftUp() {
     	if(safeToShift()) {
-    		RobotMap.shifterSolenoid.set(DoubleSolenoid.Value.kReverse); //TODO get these values
+    		RobotMap.shifterSolenoid.set(DoubleSolenoid.Value.kForward); //TODO get these values
     		isShiftedDown = false;
     	}
     }
@@ -32,7 +32,7 @@ public class GearSubsystem extends Subsystem {
      */
     public void shiftDown() {
     	if(safeToShift()){
-    		RobotMap.shifterSolenoid.set(DoubleSolenoid.Value.kForward); //TODO: Get proper direction
+    		RobotMap.shifterSolenoid.set(DoubleSolenoid.Value.kReverse); //TODO: Get proper direction
     		isShiftedDown = true;
     	}
     }

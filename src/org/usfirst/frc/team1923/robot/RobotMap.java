@@ -21,18 +21,18 @@ public class RobotMap {
     //Shooter
     public static CANTalon shooterRight = new CANTalon(0);
     public static CANTalon shooterLeft = new CANTalon(1);
-    public static Encoder shooterEncoder = new Encoder(2,3);
+    public static Encoder shooterEncoder = new Encoder(4,5);
 
 	// Intake
-	public static CANTalon intake = new CANTalon(2);
+	public static CANTalon intake = new CANTalon(3);
 	public static DigitalInput limitSwitch1 = new DigitalInput(0);
 	public static DigitalInput limitSwitch2 = new DigitalInput(1);
 	
 	//Pneumatics 
 	public static Compressor mainCompressor = new Compressor(10);
-	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,2,3);
-	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,6,7);
-	public static DoubleSolenoid shooterSolenoid = new DoubleSolenoid(10,0,1);
+	public static DoubleSolenoid shifterSolenoid = new DoubleSolenoid(10,6,7);
+	public static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(10,2,3);
+	public static DoubleSolenoid shooterSolenoid = new DoubleSolenoid(10,4,5);
 	
 	// Robot initializing
 	public static void init() {
