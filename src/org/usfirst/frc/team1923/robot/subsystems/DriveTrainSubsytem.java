@@ -26,7 +26,7 @@ public class DriveTrainSubsytem extends Subsystem{
 		
 		RobotMap.leftDriveOne.set(left);
 		RobotMap.leftDriveTwo.set(left);
-		//RobotMap.leftDriveThree.set(left);
+		RobotMap.leftDriveThree.set(left);
 
 		RobotMap.rightDriveOne.set(right);
 		RobotMap.rightDriveTwo.set(right);

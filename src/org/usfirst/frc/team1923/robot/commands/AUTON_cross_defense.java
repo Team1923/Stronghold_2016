@@ -14,7 +14,7 @@ public class AUTON_cross_defense extends CommandGroup {
     }
     
     public AUTON_cross_defense(double speed, double timeOut){
-    	addSequential(new ShooterPistonCommand(false));
+    	addSequential(new IntakePistonCommand());
     	addSequential(new DriveTimeCommand(0, 1));
     	addSequential(new DriveTimeCommand(speed,timeOut));
     }
