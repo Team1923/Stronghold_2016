@@ -60,8 +60,8 @@ public class RobotMap {
 		rightDriveTwo.enableBrakeMode(true);
 		rightDriveThree.enableBrakeMode(true);
 		
-		intake.enableBrakeMode(false);
-		shooterLeft.enableBrakeMode(false);
-		shooterRight.enableBrakeMode(false);
+//		intake.enableBrakeMode(false);
+//		shooterLeft.enableBrakeMode(false);
+//		shooterRight.enableBrakeMode(false);
 	}
 }
