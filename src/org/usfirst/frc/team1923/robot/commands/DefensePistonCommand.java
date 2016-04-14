@@ -1,44 +1,47 @@
 package org.usfirst.frc.team1923.robot.commands;
 
 import org.usfirst.frc.team1923.robot.Robot;
-import org.usfirst.frc.team1923.robot.RobotMap;
+import org.usfirst.frc.team1923.robot.subsystems.DefensePistonSubsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class HoodManagementCommand extends Command {
+public class DefensePistonCommand extends Command {
 
-    public HoodManagementCommand() {
-        requires(Robot.shooterPistonSubsystem);
+	boolean down;
+	
+    public DefensePistonCommand(boolean dir) {
+        requires(Robot.defensePistonSubsystem);
+        down = dir;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	if(down){
+    		Robot.defensePistonSubsystem.down();
+    	} else{
+    		Robot.defensePistonSubsystem.up();
+    	}
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(RobotMap.shooterEncoder.getRate() > 600)
-    		Robot.shooterPistonSubsystem.shooterUp();
-    	else if(RobotMap.shooterEncoder.getRate() < 500)
-    		Robot.shooterPistonSubsystem.shooterDown();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.shooterPistonSubsystem.shooterDown();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	end();
     }
 }

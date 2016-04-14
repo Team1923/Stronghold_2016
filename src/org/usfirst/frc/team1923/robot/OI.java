@@ -34,8 +34,8 @@ public class OI {
 		rightTrigger = new JoystickButton(rightStick, 1);
 		
 		//Drive Controls
-		upShifter.whenPressed(new GearShiftCommand(true));
-		downShifter.whenPressed(new GearShiftCommand(false));
+		leftTrigger.whenPressed(new GearShiftCommand(true));
+		rightTrigger.whenPressed(new GearShiftCommand(false));
 		
 		//Intake Controls
 		xboxController.a.whileHeld(new IntakeRollerCommand("out"));
@@ -43,13 +43,19 @@ public class OI {
 		xboxController.x.whenReleased(new IntakePistonCommand());
 		
 		//Shooter Controls
-		xboxController.rt.whenReleased(new ShooterPistonCommand(false));
-		xboxController.lt.whenReleased(new ShooterPistonCommand(true));
+//		xboxController.dPad.up.whenPressed(new ShooterWheelToggleCommand(true));
+//		xboxController.dPad.down.whenPressed(new ShooterWheelToggleCommand(false));
+		
+		xboxController.rt.whenPressed(new ShooterPistonCommand(false));
+		xboxController.lt.whenPressed(new ShooterPistonCommand(true));
 		xboxController.b.whileHeld(new ShooterWheelCommand());
 		
 		if(xboxController.rb.get()){
 			Robot.intakeRollerSubsystem.setOverride(true);
 		}
+		
+		xboxController.rb.whenReleased(new DefensePistonCommand(true));
+		xboxController.lb.whenReleased(new DefensePistonCommand(false));
         
 	}
 }

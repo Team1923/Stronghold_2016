@@ -23,6 +23,7 @@ public class Robot extends IterativeRobot {
 	public static IntakePistonSubsystem intakePistonSubsystem = new IntakePistonSubsystem();
     public static ShooterPistonSubsystem shooterPistonSubsystem = new ShooterPistonSubsystem();
     public static ShooterWheelSubsystem shooterWheelSubsystem = new ShooterWheelSubsystem();
+    public static DefensePistonSubsystem defensePistonSubsystem = new DefensePistonSubsystem();
 
 	public static OI oi;
 
@@ -56,7 +57,8 @@ public class Robot extends IterativeRobot {
     	gearSubsystem.shiftDown(); //forces start in low gear
 		intakePistonSubsystem.intakeUp(); //force intake to go up
 		shooterPistonSubsystem.shooterDown(); //force shooter down
-		RobotMap.mainCompressor.setClosedLoopControl(true); 
+		defensePistonSubsystem.up(); //bring defense pistons up
+		RobotMap.mainCompressor.setClosedLoopControl(true); //turn compressor on
     }
     
     public void initCamera(){
@@ -114,7 +116,15 @@ public class Robot extends IterativeRobot {
     
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        //hoodManagement();
         log();
+    }
+    
+    public void hoodManagement(){
+    	if(RobotMap.shooterEncoder.getRate() > 600)
+    		Robot.shooterPistonSubsystem.shooterUp();
+    	else if(RobotMap.shooterEncoder.getRate() < 500)
+    		Robot.shooterPistonSubsystem.shooterDown();
     }
     
     public void log(){
@@ -136,8 +146,10 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putNumber("RIGHT:" , RobotMap.shooterLeft.get());
     	SmartDashboard.putNumber("LEFT: ", RobotMap.shooterRight.get());
     	
-    	SmartDashboard.putBoolean("call: ", oi.xboxController.rb.get());
-    	SmartDashboard.putBoolean("response: ", Robot.intakeRollerSubsystem.getOverride());
+//    	SmartDashboard.putBoolean("call: ", oi.xboxController.rb.get());
+//    	SmartDashboard.putBoolean("response: ", Robot.intakeRollerSubsystem.getOverride());
+    	
+    	SmartDashboard.putBoolean("Defense Piston Down: ", defensePistonSubsystem.isDown());
     	
 //    	SmartDashboard.putNumber("Right Drive Encoder: ", RobotMap.rightDriveEncoder.get());
 //    	SmartDashboard.putNumber("Left Drive Encoder: ", RobotMap.leftDriveEncoder.get());

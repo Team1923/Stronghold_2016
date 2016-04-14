@@ -16,7 +16,7 @@ public class IntakeRollerCommand extends Command {
 
 	public IntakeRollerCommand(String dir) {
 		// Use requires() here to declare subsystem dependencies
-		requires(new IntakeRollerSubsystem());
+		requires(Robot.intakeRollerSubsystem);
 		direction = dir;
 	}
 

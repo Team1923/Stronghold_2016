@@ -2,6 +2,7 @@ package org.usfirst.frc.team1923.robot.commands;
 
 import org.usfirst.frc.team1923.robot.Robot;
 import org.usfirst.frc.team1923.robot.RobotMap;
+import org.usfirst.frc.team1923.robot.subsystems.ShooterPistonSubsystem;
 import org.usfirst.frc.team1923.robot.subsystems.ShooterWheelSubsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -12,7 +13,8 @@ import edu.wpi.first.wpilibj.command.Command;
 public class ShooterWheelCommand extends Command {
 		
     public ShooterWheelCommand() {
-        requires(new ShooterWheelSubsystem());
+        requires(Robot.shooterPistonSubsystem);
+        requires(Robot.shooterWheelSubsystem);
     }
 
     // Called just before this Command runs the first time

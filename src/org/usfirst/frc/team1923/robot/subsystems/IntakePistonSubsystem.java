@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1923.robot.subsystems;
 
+import org.usfirst.frc.team1923.robot.Robot;
 import org.usfirst.frc.team1923.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -28,6 +29,7 @@ public class IntakePistonSubsystem extends Subsystem {
     }
     
     public void intakeDown(){
+    	Robot.defensePistonSubsystem.up();
     	RobotMap.intakeSolenoid.set(DoubleSolenoid.Value.kForward);
     	isDown = true;
     }

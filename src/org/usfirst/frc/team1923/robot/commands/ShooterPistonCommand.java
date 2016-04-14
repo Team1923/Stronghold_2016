@@ -13,7 +13,7 @@ public class ShooterPistonCommand extends Command {
 	boolean down;
 	
     public ShooterPistonCommand(boolean userInput) {
-        requires(new ShooterPistonSubsystem());
+        requires(Robot.shooterPistonSubsystem);
         down = userInput;
     }
 

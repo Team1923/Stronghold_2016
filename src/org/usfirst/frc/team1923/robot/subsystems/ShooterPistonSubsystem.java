@@ -27,12 +27,12 @@ public class ShooterPistonSubsystem extends Subsystem {
     
     public void shooterUp(){
     	down = false;
-    	RobotMap.shooterSolenoid.set(DoubleSolenoid.Value.kReverse);
+    	RobotMap.shooterSolenoid.set(DoubleSolenoid.Value.kForward);
     }
     
     public void shooterDown(){
     	down = true;
-    	RobotMap.shooterSolenoid.set(DoubleSolenoid.Value.kForward);
+    	RobotMap.shooterSolenoid.set(DoubleSolenoid.Value.kReverse);
     }
     
     public boolean position(){
